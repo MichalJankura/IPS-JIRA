@@ -1,0 +1,161 @@
+% !TEX root = ../thesis.tex
+
+\chapter{Technické aspekty a architektúra}\label{ch:technicke-aspekty}
+
+Pochopenie technickej architektúry Jiry je kľúčové pre efektívne nasadenie a~využívanie nástroja. Táto kapitola sa venuje deployment modelom, základným konceptom dátového modelu a~integračným možnostiam.
+
+\section{Deployment modely}
+
+Jira je dostupná v~dvoch hlavných deployment modeloch, pričom každý prináša odlišné výhody a~kompromisy.
+
+\subsection{Jira Cloud}
+
+Cloud verzia predstavuje SaaS (Software as a~Service) model, kde je celá infraštruktúra spravovaná spoločnosťou Atlassian. Hlavné charakteristiky zahŕňajú:
+
+\begin{itemize}
+    \item \textbf{Automatické aktualizácie} -- Nové funkcie a~bezpečnostné záplaty sú nasadzované kontinuálne bez potreby manuálneho zásahu
+    \item \textbf{Škálovateľnosť} -- Infraštruktúra sa automaticky prispôsobuje záťaži
+    \item \textbf{Globálna dostupnosť} -- Dátové centrá po celom svete zabezpečujú nízku latenciu
+    \item \textbf{Nižšie TCO} -- Eliminovaná potreba správy vlastnej infraštruktúry
+    \item \textbf{Compliance certifikácie} -- SOC 2 Type II, ISO 27001, GDPR ready~\cite{atlassian_trust2024}
+\end{itemize}
+
+Cloud verzia využíva multi-tenant architektúru, kde sú dáta rôznych organizácií logicky izolované, ale zdieľajú spoločnú infraštruktúru. To prináša ekonomické výhody, ale môže vyvolávať obavy u~organizácií so špecifickými bezpečnostnými požiadavkami.
+
+\subsection{Jira Data Center}
+
+Data Center je self-hosted riešenie určené pre veľké organizácie s~vysokými nárokmi na dostupnosť a~kontrolu:
+
+\begin{itemize}
+    \item \textbf{Vysoká dostupnosť (HA)} -- Cluster architektúra s~aktívnymi uzlami zabezpečuje minimálny downtime
+    \item \textbf{Plná kontrola} -- Organizácia má kontrolu nad infraštruktúrou, aktualizáciami a~zabezpečením
+    \item \textbf{On-premise deployment} -- Dáta zostávajú v~infraštruktúre organizácie
+    \item \textbf{Customizácia} -- Možnosť hlbších úprav a~integrácie s~internými systémami
+\end{itemize}
+
+[Obr. 3: Porovnanie architektúry Cloud a~Data Center deploymentu]
+
+\begin{table}[ht]
+\centering
+\caption{Porovnanie deployment modelov Jira}
+\label{tab:deployment-comparison}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Kritérium} & \textbf{Cloud} & \textbf{Data Center} \\
+\hline
+Správa infraštruktúry & Atlassian & Zákazník \\
+Aktualizácie & Automatické & Manuálne \\
+Škálovanie & Automatické & Manuálne \\
+Počiatočné náklady & Nízke & Vysoké \\
+Kontrola nad dátami & Limitovaná & Plná \\
+High Availability & Zahrnuté & Vyžaduje konfiguráciu \\
+Compliance & Štandardné & Customizovateľné \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Základné koncepty a terminológia}
+
+Dátový model Jiry je postavený na hierarchii objektov, ktoré umožňujú štruktúrované riadenie práce.
+
+\subsection{Issue (Úloha)}
+
+Issue je základná jednotka práce v~Jire. Každé issue má:
+\begin{itemize}
+    \item \textbf{Kľúč} -- Unikátny identifikátor vo formáte PROJEKT-ČÍSLO (napr. PROJ-123)
+    \item \textbf{Súhrn} -- Krátky názov popisujúci úlohu
+    \item \textbf{Popis} -- Detailná špecifikácia využívajúca rich text formátovanie
+    \item \textbf{Typ} -- Kategorizácia (Bug, Story, Task, Epic, Sub-task...)
+    \item \textbf{Stav} -- Aktuálna pozícia vo workflow (To Do, In Progress, Done...)
+    \item \textbf{Priorita} -- Dôležitosť relatívne k~iným issues
+    \item \textbf{Assignee} -- Osoba zodpovedná za vyriešenie
+    \item \textbf{Reporter} -- Osoba, ktorá issue vytvorila
+    \item \textbf{Custom fields} -- Používateľom definované atribúty
+\end{itemize}
+
+\subsection{Projekt}
+
+Projekt združuje súvisiace issues a~definuje:
+\begin{itemize}
+    \item použité typy issues,
+    \item workflow pre jednotlivé typy,
+    \item prístupové práva a~oprávnenia,
+    \item schémy notifikácií,
+    \item používané agilné dosky.
+\end{itemize}
+
+\subsection{Workflow}
+
+Workflow definuje životný cyklus issue -- povolené stavy a~prechody medzi nimi. Jira umožňuje vytvárať komplexné workflows s:
+\begin{itemize}
+    \item podmienkami (conditions) -- kto môže vykonať prechod,
+    \item validátormi (validators) -- kontroly pred prechodom,
+    \item post funkcami (post-functions) -- automatické akcie po prechode.
+\end{itemize}
+
+[Obr. 4: Príklad workflow pre Bug tracking s~jednotlivými stavmi a~prechodmi]
+
+\subsection{Šprint a Verzia}
+
+\textbf{Šprint} je časovo ohraničená iterácia v~Scrum metodike, typicky 1--4 týždne. Jira umožňuje:
+\begin{itemize}
+    \item plánovanie issues do šprintov,
+    \item sledovanie velocity a~burndown,
+    \item automatické presuny nedokončených issues.
+\end{itemize}
+
+\textbf{Verzia} (Release) reprezentuje release cyklus produktu a~umožňuje:
+\begin{itemize}
+    \item plánovanie funkcionalít pre konkrétne vydania,
+    \item generovanie release notes,
+    \item sledovanie progresu k~releasu.
+\end{itemize}
+
+\section{Integrácie a ekosystém}
+
+Sila Jiry spočíva nielen v~samotnom nástroji, ale aj v~rozsiahlom ekosystéme integrácií.
+
+\subsection{Atlassian platforma}
+
+Jira sa natívne integruje s~ďalšími produktami Atlassian:
+\begin{itemize}
+    \item \textbf{Confluence} -- Prepojenie issues s~dokumentáciou a~znalostnými bázami
+    \item \textbf{Bitbucket} -- Automatické linkovaniecommitov, pull requestov a~buildov
+    \item \textbf{Trello} -- Synchronizácia kariet s~Jira issues
+    \item \textbf{Opsgenie} -- Napojenie na incident management
+\end{itemize}
+
+\subsection{REST API}
+
+Jira poskytuje komplexné REST API umožňujúce:
+\begin{itemize}
+    \item vytváranie, čítanie, aktualizáciu a~mazanie issues,
+    \item správu projektov, verzií a~šprintov,
+    \item vyhľadávanie pomocou JQL (Jira Query Language),
+    \item webhooky pre real-time notifikácie.
+\end{itemize}
+
+Príklad API volania pre vytvorenie issue~\cite{atlassian_api2024}:
+
+\begin{verbatim}
+POST /rest/api/3/issue
+{
+  "fields": {
+    "project": { "key": "PROJ" },
+    "summary": "Nová úloha z API",
+    "issuetype": { "name": "Task" }
+  }
+}
+\end{verbatim}
+
+\subsection{Atlassian Marketplace}
+
+Atlassian Marketplace obsahuje tisíce rozšírení (apps) tretích strán, vrátane:
+\begin{itemize}
+    \item pokročilých reportingových nástrojov (eazyBI, Structure),
+    \item integrácie s~CI/CD nástrojmi (Jenkins, GitLab, Azure DevOps),
+    \item rozšírení pre testovanie (Zephyr, Xray),
+    \item nástrojov pre time tracking a~resource management.
+\end{itemize}
+
+Podľa štatistík Atlassian, priemerná organizácia používa 8--12 marketplace aplikácií spolu s~core Jira funkcionalitou~\cite{atlassian_ecosystem2024}.
