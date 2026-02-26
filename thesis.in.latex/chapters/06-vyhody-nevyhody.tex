@@ -2,122 +2,74 @@
 
 \chapter{Výhody a obmedzenia nástroja Jira}\label{ch:vyhody-nevyhody}
 
-Žiadny nástroj nie je univerzálne perfektný pre všetky situácie. Táto kapitola poskytuje vyváženú analýzu silných stránok a~limitácií Jiry, čo umožní čitateľom informované rozhodnutie o~jej vhodnosti pre konkrétne potreby.
+Žiadny nástroj nie je univerzálne perfektný pre všetky situácie. Táto kapitola poskytuje vyváženú analýzu silných stránok a limitácií Jiry, čo umožní čitateľom informované rozhodnutie o jej vhodnosti pre konkrétne potreby.
 
 \section{Hlavné výhody}
 
+Jira si za viac ako dve dekády vybudovala pozíciu popredného nástroja pre projektové riadenie v~softvérovom vývoji. Jej výhody sa prejavujú najmä v~oblastiach maturity platformy, šírky funkcionalít, škálovateľnosti a~integračných možností.
+
 \subsection{Maturita a stabilita platformy}
 
-Jira je na trhu od roku 2002, čo prináša viaceré výhody:
-\begin{itemize}
-    \item \textbf{Overená technológia} -- 22+ rokov vývoja a~iterácií na základe spätnej väzby
-    \item \textbf{Stabilita} -- Minimálne kritické bugy, vysoká dostupnosť (99.95\% SLA pre Cloud)
-    \item \textbf{Dokumentácia} -- Rozsiahla oficiálna dokumentácia a~komunitné zdroje
-    \item \textbf{Ekosystém} -- Tisíce dostupných integrácií a~rozšírení
-\end{itemize}
+Jira je na trhu od roku 2002, čo prináša viacero výhod. Viac ako dve dekády vývoja a~iterácií na základe spätnej väzby zaistili overenú technologickú základňu s~minimálnym počtom kritických chýb a~vysokou dostupnosťou (99,9\,\% SLA pre Cloud Premium, 99,95\,\% pre Enterprise podľa aktuálnych podmienok Atlassian). Rozsiahla oficiálna dokumentácia spolu s~komunitnými zdrojmi uľahčuje riešenie problémov a~ekosystém tisícov integrácií a~rozšírení poskytuje pokrytie pre takmer ľubovoľný prípad použitia.
 
 \subsection{Komplexnosť funkcionalít}
 
-Jira pokrýva široké spektrum potrieb projekto management:
-\begin{itemize}
-    \item End-to-end pokrytie od plánovania po delivery
-    \item Natívna podpora Scrum aj Kanban
-    \item Pokročilé workflow customizácie
-    \item Robustný reporting a~analytics
-    \item Enterprise-grade security a~compliance
-\end{itemize}
+Jira pokrýva širokospektrálne potreby projektového riadenia: od end-to-end pokrytia od plánovania po delivery, cez natívnu podporu Scrum aj Kanban, pokročilé workflow customizácie a~robustný reporting s~analytikou, až po enterprise-grade security a~compliance. Táto komplexnosť z~nej robí univerzálnu platformu, ktorá dokáže pokryť potreby väčšiny softvérových tímov bez nutnosti použitia dodatočných nástrojov pre základné agilné procesy.
 
 \subsection{Škálovateľnosť}
 
-Jira je schopná obsluhovať:
-\begin{itemize}
-    \item Malé startupy s~niekoľkými používateľmi
-    \item Stredné firmy so stovkami používateľov
-    \item Enterprise organizácie s~tisíckami používateľov a~komplexnými štruktúrami
-    \item Multi-national deployments s~globálne distribuovanými tímami
-\end{itemize}
+Jira je schopná obsluhovať organizácie rôznych veľkostí~-- od malých startupov s~niekoľkými používateľmi, cez stredné firmy so stovkami používateľov, až po enterprise organizácie s~tisíckami používateľov a~komplexnými štruktúrami vrátane multi-national deploymentov s~globálne distribuovanými tímami.
 
 \subsection{Integračné možnosti}
 
-Rozsiahly ekosystém umožňuje prepojenie s:
-\begin{itemize}
-    \item Version control systémami (Git, SVN)
-    \item CI/CD pipelines (Jenkins, GitLab CI, Azure DevOps)
-    \item Communication tools (Slack, Microsoft Teams)
-    \item Documentation platforms (Confluence, Notion)
-    \item Development environments (VS Code, IntelliJ)
-\end{itemize}
+Rozsiahly ekosystém umožňuje prepojenie s~version control systémami (Git, SVN), CI/CD pipelines (Jenkins, GitLab CI, Azure DevOps), komunikačnými nástrojmi (Slack, Microsoft Teams), dokumentáčnými platformami (Confluence, Notion) aj vývojovými prostrediami (VS~Code, IntelliJ). Táto šírka integrácií umožňuje zapojenie Jiry do prakticky ľubovoľného vývojového stacku.
 
 \subsection{Customizovateľnosť}
 
-Hlboká konfigurovateľnosť pre špecifické potreby:
-\begin{itemize}
-    \item Custom fields ľubovoľných typov
-    \item Workflows s~podmienkami, validátormi a~post-functions
-    \item Permission a~notification schémy
-    \item Automatizačné pravidlá (Jira Automation)
-\end{itemize}
+Hlboká konfigurácia pre špecifické potreby zahŕňa custom fields ľubovoľných typov, workflows s~podmienkami, validátormi a~post-functions, permission a~notification schémy a~automatizačné pravidlá (Jira Automation). Vďaka tomu si organizácie môžu nástroj prispôsobiť tak, aby verne odrážal ich interné procesy.
 
 \section{Hlavné obmedzenia a nevýhody}
 
+Napriek mnohým výhodám, Jira má aj obmedzenia, ktoré je potrebné zvážiť pred rozhodnutím o~jej nasadení. Tieto limitácie sa prejavujú predovšetkým v~oblasti krivky učenia, ceny, výkonu a~závislosti na platforme.
+
 \subsection{Strmá krivka učenia}
 
-Komplexnosť Jiry má svoju cenu:
-\begin{itemize}
-    \item Nový používateľ potrebuje 2--4 týždne na základnú orientáciu
-    \item Administrátor vyžaduje mesiace na zvládnutie pokročilých konfigurácií
-    \item JQL syntax nie je intuitívna pre netechnických používateľov
-    \item Množstvo možností môže byť paralyzujúce
-\end{itemize}
+Komplexnosť Jiry má svoju cenu. Nový používateľ potrebuje zhruba 2--4 týždne na základnú orientáciu a~administrátor môže vyžadovať mesiace na zvládnutie pokročilých konfigurácií. JQL syntax nie je intuitívna pre netechnických používateľov a~množstvo dostupných možností môže pôsobiť paralyzujúco, najmä pri prvom kontakte s~nástrojom.
 
 \subsection{Cenová náročnosť}
 
-Pre menšie organizácie môže byť Jira nákladná:
-\begin{itemize}
-    \item Free tier je limitovaný na 10 používateľov
-    \item Premium funkcie (Advanced Roadmaps) výrazne zvyšujú cenu
-    \item Marketplace apps často vyžadujú dodatočné licencie
-    \item Data Center vyžaduje investíciu do infraštruktúry
-\end{itemize}
+Pre menšie organizácie môže byť Jira nákladná. Free tier je limitovaný na 10 používateľov a~premium funkcie (napr. Advanced Roadmaps) výrazne zvyšujú cenu. K~tomu je potrebné pripočítať dodatočné licenčné náklady za marketplace aplikácie a~v~prípade Data Center aj investíciu do vlastnej infraštruktúry. Cenovú štruktúru podľa jednotlivých úrovní ilustruje Obr.~\ref{fig:pricing}.
 
-[Obr. 9: Cenová štruktúra Jira Cloud podľa tiers]
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- tabuľka alebo graf zobrazujúci cenovú štruktúru Jira Cloud:
+% Free (10 users), Standard (cena/user), Premium (cena/user), Enterprise (kontakt).
+% Zvýraznenie kľúčových rozdielov medzi tiermi. Zdroj: vlastný screenshot
+% z atlassian.com/software/jira/pricing.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Cenová štruktúra Jira Cloud podľa tiers}
+\label{fig:pricing}
+\end{figure}
 
 \subsection{Performance pri veľkom objeme dát}
 
-S~rastúcim objemom dát môžu nastať problémy:
-\begin{itemize}
-    \item Pomalé načítavanie boards s~tisíckami issues
-    \item JQL queries na veľkých datasetoch môžu byť pomalé
-    \item Export veľkých reportov trvá dlho
-    \item Historical data môže spomaľovať celý systém
-\end{itemize}
+S rastúcim objemom dát môžu nastať výkonnostné problémy, ktoré sa prejavujú najmä pomalým načítavaním boardov s~tisíckami issues, pomalšími JQL queries na veľkých datasetoch, zdĺhavým exportom rozsiahlych reportov a~celkovým spomalením v~dôsledku akumulácie historických dát.
 
 \subsection{Vendor lock-in}
 
-Závislosť na Atlassian platforme:
-\begin{itemize}
-    \item Migrácia na iný nástroj je komplexná a~nákladná
-    \item Zmeny v~pricing politike majú okamžitý dopad
-    \item Ukončenie Server verzie prinútilo k~migrácii na Cloud/DC
-    \item Proprietárny dátový formát komplikuje export
-\end{itemize}
+Závislosť na platforme Atlassian prináša riziko vendor lock-in. Migrácia na iný nástroj je komplexná a~nákladná, zmeny v~pricing politike majú okamžitý dopad na organizáciu a~ukončenie Server verzie už v~minulosti prinútilo množstvo zákazníkov k~migrácii na Cloud alebo Data Center. Proprietárny dátový formát navyše komplikuje prípadný export dát.
 
 \subsection{Overhead pre malé projekty}
 
-Pre jednoduché projekty môže byť Jira \enquote{overkill}:
-\begin{itemize}
-    \item Setup time je neúmerný potrebám malého projektu
-    \item Administratívna záťaž môže prevážiť benefity
-    \item Jednoduchšie alternatívy (Trello, Todoist) môžu byť vhodnejšie
-\end{itemize}
+Pre jednoduché projekty môže byť Jira \enquote{overkill}. Setup time je neprimeraný potrebám malého projektu, administratívna záťaž môže prevážiť benefity a~pre takéto prípady môžu byť vhodnejšie jednoduchšie alternatívy ako Trello či Todoist.
 
 \section{Porovnávacia analýza}
 
-Nasledujúca tabuľka sumarizuje výhod a~nevýhody v~kontexte rôznych použití:
+Pre ucelený pohľad na silné stránky a~obmedzenia Jiry je užitočné vidieť ich v~priamom kontraste. Nasledujúca tabuľka sumarizuje výhody a~nevýhody v~kontexte rôznych aspektov používania nástroja, čo umožňuje čitateľovi rýchlo posúdiť kompromisy relevantné pre jeho situáciu.
 
 \begin{table}[ht]
 \centering
-\caption{Súhrnné porovnanie výhod a~nevýhod Jiry}
+\caption{Súhrnné porovnanie výhod a nevýhod Jiry}
 \label{tab:porovnanie-vyhod}
 \begin{tabular}{|p{4cm}|p{4.5cm}|p{4.5cm}|}
 \hline
@@ -129,7 +81,7 @@ Funkcionalita & Komplexné pokrytie potrieb & Strmá krivka učenia \\
 \hline
 Customizácia & Hlboká konfigurovateľnosť & Komplexná správa \\
 \hline
-Ekosystém & 3000+ marketplace apps & Dodatočné licenčné náklady \\
+Ekosystém & 5700+ marketplace apps & Dodatočné licenčné náklady \\
 \hline
 Cena & Free tier pre malé tímy & Premium funkcie nákladné \\
 \hline
@@ -142,29 +94,33 @@ Reporting & Bohaté analytické nástroje & Pokročilé funkcie vyžadujú apps 
 \end{tabular}
 \end{table}
 
+Z~Tabuľky~\ref{tab:porovnanie-vyhod} vyplýva niekoľko dôležitých pozorovaní. Predovšetkým, väčšina obmedzení Jiry je priamo spätá s~jej silnými stránkami~-- komplexnosť funkcionalít prináša strmú krivku učenia, hlboká konfigurovateľnosť znamená náročnejšiu správu a~rozsiahly ekosystém marketplace aplikácií prináša dodatočné licenčné náklady. Organizácie by preto mali zvážiť, či ich konkrétne potreby ospravedlňujú túto mieru komplexity.
+
+Z~pohľadu praxe je tiež vidieť, že obmedzenia Jiry sa prejavujú výraznejšie na dvoch koncoch spektra. Pre veľmi malé tímy a~jednoduché projekty je Jira často zbytočne robustná~-- overhead na nastavenie a~správu prevažuje nad prínosmi. Naopak, pri extrémne veľkých nasadeniach s~tisíckami používateľov sa prejavujú výkonnostné limity. Pre stredné a~stredne veľké tímy, ktoré tvoria jadro cieľovej skupiny, sú výhody spravidla výrazne prevažujúce.
+
 \section{Kedy je Jira vhodná}
 
-Na základe analýzy možno odporučiť Jiru pre:
+Na základe analýzy možno Jiru odporučiť predovšetkým pre stredné až veľké softvérové tímy s~desiatimi a~viac členmi, kde komplexnosť nástroja prinesie reálnu návratnosť. Rovnako je vhodná pre organizácie s~komplexnými workflows vyžadujúcimi customizáciu a~tímy praktizujúce Scrum alebo Kanban s~potrebou natívnej podpory.
 
-\begin{itemize}
-    \item \textbf{Stredné až veľké softvérové tímy} (10--500+ členov)
-    \item \textbf{Organizácie s~komplexnými workflows} vyžadujúcimi customizáciu
-    \item \textbf{Tímy praktizujúce Scrum alebo Kanban} potrebujúce natívnu podporu
-    \item \textbf{Firmy v~regulovaných odvetviach} s~požiadavkami na audit trail
-    \item \textbf{Organizácie už používajúce Atlassian stack} (Confluence, Bitbucket)
-    \item \textbf{Tímy vyžadujúce pokročilú analytiku} a~dátami riadené rozhodovanie
-\end{itemize}
+V~regulovaných odvetviach, kde sú požiadavky na audit trail kritické, predstavuje Jira jednu z~mála platforiem spĺňajúcich compliance požiadavky priamo v~základnom produkte. Pre organizácie už používajúce Atlassian stack (Confluence, Bitbucket) je synergia medzi nástrojmi ďalším argumentom pre jej nasadenie. Tímy vyžadujúce pokročilú analytiku a~dátami riadené rozhodovanie tiež ocenia hĺbku reportingových nástrojov.
 
 \section{Kedy zvážiť alternatívy}
 
-Jira nemusí byť optimálna pre:
+Jira nemusí byť optimálna pre niekoľko kategórií používateľov. Pre veľmi malé tímy do piatich ľudí s~jednoduchými potrebami bude jednoduchší nástroj efektívnejší, pretože čas investovaný do konfigurácie Jiry sa pri malom tíme nemusí vrátiť.
 
-\begin{itemize}
-    \item \textbf{Veľmi malé tímy} (do 5 ľudí) s~jednoduchými potrebami
-    \item \textbf{Netechnické tímy} bez skúseností s~projektovým riadením
-    \item \textbf{Projekty s~minimálnym rozpočtom} kde i~základné licencie sú bariérou
-    \item \textbf{Organizácie preferujúce simplicity} nad feature richness
-    \item \textbf{Tímy vyžadujúce okamžitý start} bez času na setup a~konfiguráciu
-\end{itemize}
+Netechnické tímy bez skúseností s~projektovým riadením môžu mať problém s~krivkou učenia, a~projekty s~minimálnym rozpočtom, kde i~základné licencie predstavujú bariéru, by mali zvážiť bezplatné alternatívy. Rovnako organizácie preferujúce jednoduchosť pred množstvom funkcií alebo tímy vyžadujúce okamžitý štart bez času na setup a~konfiguráciu nájdu lepšie riešenie v~nástrojoch ako Trello alebo Asana.
 
-Rozhodnutie o~nasadení Jiry by malo byť založené na konkrétnych potrebách organizácie, dostupných zdrojoch a~dlhodobých cieľoch. Výhody Jiry typicky prevažujú nad obmedzeniami v~kontexte profesionálneho softvérového vývoja so strednou až vysokou komplexitou.
+Rozhodovací strom na Obr.~\ref{fig:decision-tree} vizualizuje kľúčové otázky, ktoré by organizácia mala zvážiť pri výbere medzi Jirou a~alternatívami.
+
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- rozhodovací strom (flowchart): kľúčové otázky:
+% "Softvérový vývoj?" -> áno/nie; "Scrum/Kanban?" -> áno/nie;
+% "Tím > 10 ľudí?" -> áno/nie; "Potreba customizácie?" -> áno/nie.
+% Koncové uzly: Jira, Trello, Asana, iné. Zdroj: vlastná schéma.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Rozhodovací strom pre výber nástroja na projektové riadenie}
+\label{fig:decision-tree}
+\end{figure}
+
+Rozhodnutie o nasadení Jiry by malo byť založené na konkrétnych potrebách organizácie, dostupných zdrojoch a dlhodobých cieľoch. Výhody Jiry typicky prevažujú nad obmedzeniami v kontexte profesionálneho softvérového vývoja so strednou až vysokou komplexitou.

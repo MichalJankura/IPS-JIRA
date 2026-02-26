@@ -1,282 +1,182 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Využitie nástroja Jira v~projektovom cykle}\label{ch:vyuzitie}
+\chapter{Využitie nástroja Jira v projektovom cykle}\label{ch:vyuzitie}
 
-Táto kapitola detailne analyzuje praktické využitie Jiry v~jednotlivých fázach a~aktivitách agilného projektového riadenia. Zameriame sa na konkrétne funkcionality a~pracovné postupy, ktoré efektívne podporujú každodennú prácu tímov.
+Táto kapitola detailne analyzuje praktické využitie Jiry v jednotlivých fázach a aktivitách agilného projektového riadenia. Zameriame sa na konkrétne funkcionality a pracovné postupy, ktoré efektívne podporujú každodennú prácu tímov.
 
 \section{Plánovanie a backlog management}
 
-Efektívne plánovanie je základom úspešného projektu. Jira poskytuje robustné nástroje pre správu produktového backlogu a~plánovanie iterácií.
+Efektívne plánovanie je základom úspešného projektu. Jira poskytuje robustné nástroje pre správu produktového backlogu (zásobníka požiadaviek) a plánovanie iterácií, čím umožňuje tímom systematicky transformovať strategické ciele na konkrétne pracovné položky.
 
 \subsection{Produktový backlog}
 
-Produktový backlog v~Jire reprezentuje prioritizovaný zoznam všetkej práce, ktorá má byť na projekte vykonaná. Klúčové aspekty práce s~backlogom zahŕňajú:
+Produktový backlog v Jire reprezentuje prioritizovaný zoznam všetkej práce, ktorá má byť na projekte vykonaná. Práca je organizovaná do hierarchickej štruktúry: na najvyššej úrovni stoja iniciatívy ako strategické ciele, tie sa delia na epiky predstavujúce veľké funkcionality, ktoré sa ďalej rozkladajú na user stories a~tasky (konkrétne pracovné položky) a~nakoniec na sub-tasky (detailné kroky implementácie). Táto hierarchia umožňuje sledovať progres na rôznych úrovniach granularity~-- od strategického prehľadu pre stakeholderov až po denné úlohy pre individuálnych vývojárov.
 
-\textbf{Hierarchická štruktúra} -- Jira umožňuje organizovať prácu do hierarchie:
-\begin{enumerate}
-    \item \textbf{Iniciatívy} -- Strategické ciele na najvyššej úrovni
-    \item \textbf{Epiky} -- Veľké funkcionality rozkladané na menšie časti
-    \item \textbf{User Stories/Tasky} -- Konkrétne pracovné položky
-    \item \textbf{Sub-tasky} -- Detailné kroky pre implementáciu
-\end{enumerate}
+Backlog view umožňuje drag-and-drop preusporiadanie podľa priority, filtrovanie pomocou JQL dotazov, hromadné operácie (bulk operations) a~vizualizáciu závislostí medzi položkami. Na to nadväzuje proces backlog refinementu, pri ktorom tím spoločne odhaduje komplexitu jednotlivých položiek prostredníctvom story pointov s~planning poker integráciou, priraďuje epiky a~verzie, pridáva acceptance criteria do opisu a~označuje items vyžadujúce zvláštnu pozornosť. Ako je vidieť na Obr.~\ref{fig:backlog}, backlog view ponúka prehľadnú vizualizáciu celej hierarchie vrátane odhadov.
 
-\textbf{Prioritizácia} -- Backlog view umožňuje:
-\begin{itemize}
-    \item drag-and-drop preusporiadanie podľa priority,
-    \item filtrovanie pomocou JQL dotazov,
-    \item bulk operácie pre hromadné zmeny,
-    \item vizualizáciu dependencies medzi items.
-\end{itemize}
-
-\textbf{Refinement} -- Jira podporuje backlog grooming sessiony prostredníctvom:
-\begin{itemize}
-    \item story point odhady s~planning poker integráciou,
-    \item priradzovania epikov a~verzií,
-    \item pridávania acceptance criteria do opisu,
-    \item flagovania items vyžadujúcich pozornosť.
-\end{itemize}
-
-[Obr. 5: Ukážka backlog view s~hierarchickou štruktúrou a~odhadmi]
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot Jira backlog view zobrazujúci hierarchickú štruktúru
+% (epic > story > subtask), drag-and-drop rozhranie, story point odhady, priority,
+% filtrovacie možnosti. Zdroj: vlastný screenshot.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Ukážka backlog view s~hierarchickou štruktúrou a~odhadmi}
+\label{fig:backlog}
+\end{figure}
 
 \subsection{Sprint planning}
 
-Sprint planning v~Jire prebieha nasledovne:
+Sprint planning (plánovanie šprintu) v~Jire prebieha v~štyroch krokoch: najprv sa vytvorí šprint s~definovaním názvu, dátumov začiatku a~konca a~šprintového cieľa (sprint goal). Následne sa presunú items z~backlogu do šprintu pomocou drag-and-drop. V~treťom kroku sa vyhodnotí kapacita~-- porovnanie celkových story pointov s~historickou velocity tímu pomáha predísť preťaženiu. Nakoniec sa šprint aktivuje a~začne práca. Ukážku tohto rozhrania zachytáva Obr.~\ref{fig:sprint-planning}.
 
-\begin{enumerate}
-    \item \textbf{Vytvorenie šprintu} -- Definovanie názvu, dátumov začiatku a~konca, šprintového cieľa
-    \item \textbf{Naplnenie šprintu} -- Presun items z~backlogu do šprintu pomocou drag-and-drop
-    \item \textbf{Kapacitné plánovanie} -- Sledovanie celkových story points vs. velocity tímu
-    \item \textbf{Štart šprintu} -- Aktivácia šprintu a~začiatok práce
-\end{enumerate}
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot sprint planning obrazovky v Jire: šprint
+% s drag-and-drop z backlogu, zobrazenie kapacity/velocity, sprint goal.
+% Zdroj: vlastný screenshot.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Sprint planning s~kapacitným plánovaním a~drag-and-drop rozhraním}
+\label{fig:sprint-planning}
+\end{figure}
 
-Jira poskytuje metriky pre informované rozhodovanie:
-\begin{itemize}
-    \item \textbf{Velocity chart} -- Historická kapacita tímu naprieč šprintami
-    \item \textbf{Commitment vs. Completion} -- Pomer plánovanej a~dokončenej práce
-    \item \textbf{Issue count} -- Počet items pre manažment WIP (Work In Progress)
-\end{itemize}
+Jira poskytuje metriky pre informované rozhodovanie: \textit{velocity chart} zobrazujúci historickú kapacitu tímu naprieč šprintami, ukazovateľ \textit{commitment vs.~completion} vyjadrujúci pomer plánovanej a~dokončenej práce a~\textit{issue count} pre manažment WIP (Work In Progress).
 
 \subsection{Roadmap a dlhodobé plánovanie}
 
-Pre strategické plánovanie Jira ponúka:
-
-\textbf{Basic Roadmap} (zahrnutý v~Jira Software) umožňuje:
-\begin{itemize}
-    \item vizualizáciu epikov na časovej osi,
-    \item sledovanie dependencies medzi epikmi,
-    \item zdieľanie roadmapy so stakeholdermi.
-\end{itemize}
-
-\textbf{Advanced Roadmap} (Jira Premium) pridáva:
-\begin{itemize}
-    \item plánovanie naprieč viacerými tímami a~projektami,
-    \item what-if scenáre a~kapacitné modelovanie,
-    \item automatické prepisovanie plánov pri zmenách,
-    \item sledovanie rizík a~blockerov.
-\end{itemize}
+Pre strategické plánovanie Jira ponúka dva hlavné nástroje. \textbf{Basic Roadmap}, zahrnutý v~štandardnej Jire, umožňuje vizualizáciu epikov na časovej osi, sledovanie závislostí (dependencies) medzi epikmi a~zdieľanie roadmapy so stakeholdermi. Pre organizácie s~potrebou plánovania naprieč viacerými tímami je určený nástroj \textbf{Plans} (predtým Advanced Roadmaps, dostupný v~Jira Premium), ktorý pridáva plánovanie naprieč tímami a~projektami, what-if scenáre s~kapacitným modelovaním, automatické prepisovanie plánov pri zmenách a~sledovanie rizík.
 
 \section{Správa úloh a issue tracking}
 
-Každodenná práca s~issues je jadrom používania Jiry. Efektívna správa úloh vyžaduje pochopenie best practices a~dostupných nástrojov.
+Každodenná práca s issues je jadrom používania Jiry. Efektívna správa úloh vyžaduje pochopenie best practices a dostupných nástrojov, pričom kľúčovú úlohu zohráva štruktúrovaný životný cyklus issue a~výkonný dotazovací jazyk JQL.
 
 \subsection{Životný cyklus issue}
 
 Typický životný cyklus issue prechádza nasledujúcimi fázami:
 
 \begin{enumerate}
-    \item \textbf{Vytvorenie} -- Reporter vytvorí issue s~potrebnými detailmi. Dobre napísané issue obsahuje:
-    \begin{itemize}
-        \item jasný, akčný summary,
-        \item detailný popis s~kontextom a~acceptance criteria,
-        \item správny typ a~prioritu,
-        \item prípadné prílohy (snímky obrazovky, logy).
-    \end{itemize}
-    
-    \item \textbf{Triáž} -- Product Owner alebo tím leader:
-    \begin{itemize}
-        \item validuje relevantnosť issue,
-        \item nastavuje prioritu,
-        \item priraďuje do epiku a~verzie,
-        \item odhaduje komplexitu (story points).
-    \end{itemize}
-    
-    \item \textbf{Plánovanie} -- Issue je zaradené do šprintu na základe:
-    \begin{itemize}
-        \item priority a~business value,
-        \item dostupnej kapacity tímu,
-        \item technických dependencies.
-    \end{itemize}
-    
-    \item \textbf{Implementácia} -- Vývojár pracuje na issue:
-    \begin{itemize}
-        \item prechod do stavu In Progress,
-        \item prepojenie s~git branchom a~commitmi,
-        \item dokumentácia technických rozhodnutí v~komentároch,
-        \item logovanie odpracovaného času.
-    \end{itemize}
-    
-    \item \textbf{Review} -- Kontrola kvality:
-    \begin{itemize}
-        \item code review cez prepojený pull request,
-        \item testovanie podľa acceptance criteria,
-        \item QA validácia pre produkčné releasy.
-    \end{itemize}
-    
-    \item \textbf{Dokončenie} -- Prechod do stavu Done:
-    \begin{itemize}
-        \item splnenie definition of done,
-        \item automatické notifikácie stakeholderom,
-        \item aktualizácia release notes.
-    \end{itemize}
+    \item \textbf{Vytvorenie}~-- Reporter vytvorí issue s~potrebnými detailmi. Dobre napísané issue obsahuje jasný a~akčný summary, detailný popis s~kontextom a~acceptance criteria, správny typ a~prioritu a~prípadné prílohy (snímky obrazovky, logy).
+
+    \item \textbf{Triáž}~-- Product Owner alebo tím leader validuje relevantnosť issue, nastavuje prioritu, priraďuje ho do epiku a~verzie a~odhaduje komplexitu (story points).
+
+    \item \textbf{Plánovanie}~-- Issue je zaradené do šprintu na základe priority a~business value, dostupnej kapacity tímu a~technických dependencies.
+
+    \item \textbf{Implementácia}~-- Vývojár presunie issue do stavu In~Progress, prepojí ho s~git branchom a~commitmi, dokumentuje technické rozhodnutia v~komentároch a~loguje odpracovaný čas.
+
+    \item \textbf{Review}~-- Kontrola kvality zahŕňa code review cez prepojený pull request, testovanie podľa acceptance criteria a~QA validáciu pre produkčné releasy.
+
+    \item \textbf{Dokončenie}~-- Prechod do stavu Done nastáva po splnení definition of done, pričom sa automaticky odošlú notifikácie stakeholderom a~aktualizujú release notes.
 \end{enumerate}
+
+Detail konkrétneho issue zobrazuje Obr.~\ref{fig:issue-detail}, na ktorom je vidieť typické rozloženie informácií vrátane summary, popisu, priradenej osoby, stavu a~vlastných polí.
+
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot issue detail view v Jire: summary, description,
+% assignee, reporter, status, priority, sprint, epic link, custom fields, komentáre,
+% activity log. Zdroj: vlastný screenshot.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Detail issue s~kľúčovými atribútmi a~aktivitou}
+\label{fig:issue-detail}
+\end{figure}
 
 \subsection{JQL -- Jira Query Language}
 
-JQL je výkonný dotazovací jazyk pre vyhľadávanie a~filtrovanie issues. Syntax kombinuje polia, operátory a~hodnoty~\cite{atlassian_jql2024}:
+JQL je výkonný dotazovací jazyk pre vyhľadávanie a filtrovanie issues. Syntax kombinuje polia, operátory a hodnoty \cite{atlassian_jql2024}:
 
 \begin{verbatim}
-project = "PROJ" AND status = "In Progress" 
-AND assignee = currentUser() 
+project = "PROJ" AND status = "In Progress"
+AND assignee = currentUser()
 ORDER BY priority DESC
 \end{verbatim}
 
-Pokročilé JQL dotazy umožňujú:
-\begin{itemize}
-    \item vyhľadávanie podľa vlastných polí,
-    \item použitie funkcií (startOfWeek(), membersOf()),
-    \item kombináciu podmienok s~AND, OR, NOT,
-    \item ukladanie ako filtre pre opakované použitie.
-\end{itemize}
+Pokročilé JQL dotazy umožňujú vyhľadávanie podľa vlastných polí, použitie funkcií (napr. startOfWeek(), membersOf()), kombináciu podmienok s~AND, OR, NOT a~ukladanie dotazov ako filtre pre opakované použitie.
 
 Príklady užitočných JQL dotazov:
 \begin{itemize}
-    \item Všetky bugs s~vysokou prioritou: \texttt{type = Bug AND priority >= High}
-    \item Úlohy bez assignee v~aktuálnom šprinte: \texttt{sprint in openSprints() AND assignee is EMPTY}
+    \item Všetky bugs s vysokou prioritou: \texttt{type = Bug AND priority >= High}
+    \item Úlohy bez assignee v aktuálnom šprinte: \texttt{sprint in openSprints() AND assignee is EMPTY}
     \item Nedávno aktualizované: \texttt{updated >= -7d ORDER BY updated DESC}
 \end{itemize}
 
 \section{Agilné dosky -- Scrum a Kanban}
 
-Vizuálne agilné dosky sú ústredným prvkom Jiry pre koordináciu tímovej práce~\cite{anderson2010}.
+Vizuálne agilné dosky sú ústredným prvkom Jiry pre koordináciu tímovej práce \cite{anderson2010}. Ich podstatou je vizualizácia toku úloh prostredníctvom stĺpcov reprezentujúcich jednotlivé fázy pracovného procesu. Táto transparentnosť umožňuje celému tímu na prvý pohľad vidieť, na čom sa pracuje, čo je blokované a~kde sa hromadí práca. Jira ponúka dva základné typy dosiek~-- Scrum board pre iteratívny vývoj a~Kanban board pre kontinuálny tok.
 
 \subsection{Scrum Board}
 
-Scrum board je optimalizovaný pre tímy pracujúce v~iteráciách:
+Scrum board je optimalizovaný pre tímy pracujúce v~iteráciách (šprintoch). Board sa štruktúruje do stĺpcov reprezentujúcich workflow stavy (To~Do, In~Progress, In~Review, Done), pričom karty zobrazujú issues s~kľúčovými informáciami~-- kľúč, summary, assignee a~story points. Swimlanes umožňujú horizontálne rozdelenie boardu podľa epikov, assignees alebo priorít.
 
-\textbf{Štruktúra:}
-\begin{itemize}
-    \item Stĺpce reprezentujú workflow stavy (To Do, In Progress, In Review, Done)
-    \item Karty zobrazujú issues s~kľúčovými informáciami (kľúč, summary, assignee, story points)
-    \item Swimlanes môžu rozdeliť board podľa epikov, assignees alebo priorit
-\end{itemize}
+Z~funkcií špecifických pre šprint vyniká zobrazenie sprint goal pre zachovanie fokusu na cieľ, indikátory zmien scope (pridané alebo odobrané items po štarte šprintu), odpočet zostávajúcich dní a~quick filtre pre rýchle filtrovanie kariet. Príklad aktívneho Scrum boardu zachytáva Obr.~\ref{fig:scrum-board}.
 
-\textbf{Sprint-specific features:}
-\begin{itemize}
-    \item Sprint goal display pre zachovanie fokusuna cieľ
-    \item Scope change indikátory (pridané/odobrané items po štarte)
-    \item Days remaining countdown
-    \item Quick filters pre filtrovanie kariet
-\end{itemize}
-
-[Obr. 6: Príklad Scrum boardu s~aktívnym šprintom]
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot Scrum boardu s aktívnym šprintom: stĺpce
+% To Do / In Progress / In Review / Done, karty s assignee avatarmi,
+% sprint goal, swimlanes. Zdroj: vlastný screenshot.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Príklad Scrum boardu s~aktívnym šprintom}
+\label{fig:scrum-board}
+\end{figure}
 
 \subsection{Kanban Board}
 
-Kanban board je určený pre kontinuálny flow práce bez fixných iterácií:
+Kanban board je určený pre kontinuálny tok (flow) práce bez fixných iterácií. Na rozdiel od Scrum boardu, práca plynie kontinuálne bez šprintových hraníc. WIP limity na stĺpcoch zabraňujú preťaženiu, column constraints vynucujú procesné pravidlá a~cumulative flow diagram (diagram kumulatívneho toku) umožňuje analýzu toku práce.
 
-\textbf{Charakteristiky:}
-\begin{itemize}
-    \item Žiadne šprint boundaries -- práca plynie kontinuálne
-    \item WIP limity na stĺpcoch zabraňujú preťaženiu
-    \item Column constraints vynucujú procesné pravidlá
-    \item Cumulative flow diagram pre analýzu flow
-\end{itemize}
+\textbf{WIP limity} sú kľúčovou funkciou Kanban prístupu. Do~každého stĺpca je možné nastaviť maximálny počet issues, pričom pri prekročení limitu sa zobrazí vizuálna indikácia. Tento mechanizmus podporuje pull-based systém práce, znižuje context switching a~tým zvyšuje celkový throughput (priepustnosť) tímu. Ukážku Kanban boardu s~nastavenými WIP limitmi zobrazuje Obr.~\ref{fig:kanban-board}.
 
-\textbf{WIP limity} sú kľúčovou funkciou Kanban prístupu:
-\begin{itemize}
-    \item Nastavenie maximálneho počtu issues v~stĺpci
-    \item Vizuálna indikácia pri prekročení limitu
-    \item Podporuje pull-based systém práce
-    \item Znižuje context switching a~zvyšuje throughput
-\end{itemize}
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot Kanban boardu: stĺpce s WIP limitmi (čísla
+% v hlavičke stĺpcov), farebná indikácia pri prekročení limitu, karty plynúce
+% kontinuálne bez šprintových hraníc. Zdroj: vlastný screenshot.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Kanban board s~WIP limitmi a~kontinuálnym tokom práce}
+\label{fig:kanban-board}
+\end{figure}
 
 \subsection{Konfigurácia dosiek}
 
-Oba typy dosiek umožňujú rozsiahlu konfiguráciu:
-
-\begin{itemize}
-    \item \textbf{Columns} -- Mapovanie workflow stavov na stĺpce
-    \item \textbf{Swimlanes} -- Horizontálne rozdelenie (queries, assignees, stories)
-    \item \textbf{Card layout} -- Výber zobrazovaných polí na kartách
-    \item \textbf{Quick filters} -- Predefinované JQL filtre pre rýchle prepínanie pohľadov
-    \item \textbf{Card colors} -- Farebné kódovanie podľa priority, typu alebo vlastného kritéria
-\end{itemize}
+Oba typy dosiek umožňujú rozsiahlu konfiguráciu. Mapovanie workflow stavov na stĺpce (columns) určuje, ktoré stavy zodpovedajú ktorému vizuálnemu stĺpcu. Swimlanes umožňujú horizontálne rozdelenie podľa dotazov, assignees alebo stories. Card layout definuje, aké polia sa zobrazujú na kartách. Quick filters ponúkajú predefinované JQL filtre pre rýchle prepínanie pohľadov a~farebné kódovanie podľa priority, typu alebo vlastného kritéria ďalej zvyšuje vizuálnu prehľadnosť.
 
 \section{Monitorovanie a reporting}
 
-Dátami riadené rozhodovanie vyžaduje kvalitné reportingové nástroje. Jira poskytuje bohatú paletu reportov a~dashboardov.
+Dátami riadené rozhodovanie vyžaduje kvalitné reportingové nástroje. Jira poskytuje bohatú paletu reportov a dashboardov, ktoré premieňajú surové dáta na actionable insights pre rôzne úrovne organizácie.
 
 \subsection{Štandardné reporty}
 
-Jira obsahuje množstvo zabudovaných reportov:
+Jira obsahuje množstvo zabudovaných reportov rozdelených do niekoľkých kategórií. Pre Scrum tímy sú kľúčové štyri reporty: \textbf{Burndown Chart} zobrazuje zostávajúcu prácu v~šprinte oproti ideálnej línii a~umožňuje tak identifikovať odchýlky od plánu; \textbf{Velocity Chart} zachytáva historickú kapacitu tímu naprieč šprintami a~slúži ako základ pre kapacitné plánovanie; \textbf{Sprint Report} poskytuje súhrn šprintu vrátane zmien scope; a~\textbf{Burnup Chart} zobrazuje kumulatívne dokončenú prácu.
 
-\textbf{Scrum reporty:}
-\begin{itemize}
-    \item \textbf{Burndown Chart} -- Zobrazuje zostávajúcu prácu v~šprinte voči ideálnej línii
-    \item \textbf{Velocity Chart} -- Historická kapacita tímu naprieč šprintami
-    \item \textbf{Sprint Report} -- Súhrn šprintu vrátane scope changes
-    \item \textbf{Burnup Chart} -- Kumulatívne dokončená práca
-\end{itemize}
+Pre Kanban tímy sú určené najmä \textbf{Cumulative Flow Diagram} zobrazujúci distribúciu issues naprieč stavmi v~čase, čo umožňuje identifikovať úzke miesta v~procese, a~\textbf{Control Chart} pre analýzu cycle time (doby cyklu) a~lead time (celkového času od zadania po dokončenie).
 
-\textbf{Kanban reporty:}
-\begin{itemize}
-    \item \textbf{Cumulative Flow Diagram} -- Distribúcia issues naprieč stavmi v~čase
-    \item \textbf{Control Chart} -- Cycle time a~lead time analýza
-\end{itemize}
+Univerzálne reporty využiteľné oboma prístupmi zahŕňajú \textbf{Created vs. Resolved} (trend vytvárania a~riešenia issues), \textbf{Resolution Time} (štatistiky času potrebného na vyriešenie) a~\textbf{Workload Pie Chart} (distribúcia práce medzi členov tímu). Príklad Burndown chartu s~viditeľnou odchýlkou od ideálnej línie zachytáva Obr.~\ref{fig:burndown}.
 
-\textbf{Univerzálne reporty:}
-\begin{itemize}
-    \item \textbf{Created vs. Resolved} -- Trend vytvárania a~riešenia issues
-    \item \textbf{Resolution Time} -- Štatistiky času potrebného na vyriešenie
-    \item \textbf{Workload Pie Chart} -- Distribúcia práce medzi členov tímu
-\end{itemize}
-
-[Obr. 7: Príklad Burndown chartu s~ideálnou a~aktuálnou líniou]
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot Burndown chartu: ideálna línia (šedá/sivá)
+% vs. skutočná línia (modrá/zelená), osi: dni šprintu vs. zostávajúce story points,
+% viditeľná odchýlka. Zdroj: vlastný screenshot.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Príklad Burndown chartu s~ideálnou a~aktuálnou líniou}
+\label{fig:burndown}
+\end{figure}
 
 \subsection{Dashboardy}
 
-Dashboardy umožňujú agregáciu informácií z~rôznych zdrojov na jednom mieste:
+Dashboardy umožňujú agregáciu informácií z~rôznych zdrojov na jednom mieste prostredníctvom modulárnych gadgetov zobrazujúcich rôzne metriky. Ako základ gadgetov slúžia zdieľané JQL filtre. Dashboardy môžu byť privátne, zdieľané alebo globálne a~v~režime wall mode je k~dispozícii fullscreenové zobrazenie pre tímové miestnosti.
 
-\begin{itemize}
-    \item \textbf{Gadgety} -- Modulárne komponenty zobrazujúce rôzne metriky
-    \item \textbf{Filters} -- Zdieľané JQL dotazy ako základ gadgetov
-    \item \textbf{Sharing} -- Dashboardy môžu byť privátne, zdieľané alebo globálne
-    \item \textbf{Wall mode} -- Full-screen zobrazenie pre team rooms
-\end{itemize}
+Medzi najpoužívanejšie gadgety patria Filter Results (zoznam issues podľa filtra), Pie Chart (distribúcia podľa vybraného poľa), Activity Stream (posledné aktivity na projekte) a~Sprint Burndown (aktuálny stav šprintu). Ukážku dashboardu s~niekoľkými typmi gadgetov zobrazuje Obr.~\ref{fig:dashboard}.
 
-Príklady užitočných gadgetov:
-\begin{itemize}
-    \item Filter Results -- Zoznam issues podľa filtra
-    \item Pie Chart -- Distribúcia issues podľa vybraného poľa
-    \item Activity Stream -- Posledné aktivity na projekte
-    \item Sprint Burndown -- Aktuálny stav šprintu
-\end{itemize}
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot Jira dashboardu s gadgetmi: burndown gadget,
+% pie chart distribúcie podľa priority, filter results tabuľka, activity stream.
+% Zdroj: vlastný screenshot.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Dashboard s~modulárnymi gadgetmi pre prehľad projektu}
+\label{fig:dashboard}
+\end{figure}
 
 \subsection{Advanced Analytics}
 
-Pre hlbšiu analýzu poskytuje Jira Cloud:
+Pre hlbšiu analýzu poskytuje Jira Cloud zabudované analytické nástroje \textbf{Insights}, ktoré umožňujú sledovanie kľúčových DORA metrík \cite{forsgren2018}: frekvenciu nasadení (deployment frequency), lead time for changes, mieru zlyhania zmien (change failure rate) a~priemernú dobu obnovy (mean time to recovery).
 
-\textbf{Insights} -- Zabudované analytické nástroje:
-\begin{itemize}
-    \item Deployment frequency tracking
-    \item Lead time for changes
-    \item Change failure rate
-    \item Mean time to recovery (DORA metriky)~\cite{forsgren2018}
-\end{itemize}
-
-\textbf{Marketplace riešenia} pre pokročilú analytiku:
-\begin{itemize}
-    \item eazyBI -- BI nástroj s~OLAP kockami
-    \item Structure -- Hierarchická vizualizácia
-    \item BigPicture -- Portfolio management a~gantt charty
-\end{itemize}
+Spomedzi \textbf{marketplace riešení} pre pokročilú analytiku vynikajú eazyBI ako BI nástroj s~OLAP kockami, Structure pre hierarchickú vizualizáciu a~BigPicture pre portfolio management a~Gantt charty.

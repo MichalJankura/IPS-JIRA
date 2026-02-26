@@ -2,96 +2,77 @@
 
 \chapter{Čo je Jira?}\label{ch:co-je-jira}
 
-Jira je komplexný softvérový nástroj pre riadenie projektov, sledovanie úloh a~koordináciu tímovej spolupráce, vyvinutý austrálskou spoločnosťou Atlassian. Názov produktu je odvodený od japonského slova \textit{Gojira}, čo je pôvodný názov pre filmovú príšeru Godzillu. Toto pomenovanie vzniklo ako interná prezývka pre konkurenčný produkt Bugzilla a~následne bolo adoptované pre nový projekt~\cite{atlassian_history2023}.
+Jira je komplexný softvérový nástroj pre riadenie projektov, sledovanie úloh a koordináciu tímovej spolupráce, vyvinutý austrálskou spoločnosťou Atlassian. Názov produktu je odvodený od japonského slova \textit{Gojira}, čo je pôvodný názov pre filmovú príšeru Godzillu. Toto pomenovanie vzniklo ako interná prezývka pre konkurenčný produkt Bugzilla a následne bolo adoptované pre nový projekt \cite{atlassian_history2023}.
 
 \section{História a vývoj nástroja}
 
-Spoločnosť Atlassian bola založená v~roku 2002 v~Sydney, Austrália, spoluzakladateľmi Mikeom Cannonom-Brookesom a~Scottom Farquharom. V~tom istom roku bola vydaná prvá verzia Jiry, pôvodne navrhnutá ako nástroj na sledovanie chýb (bug tracker) pre interné potreby spoločnosti~\cite{atlassian_company2024}.
+Spoločnosť Atlassian založili Mike Cannon-Brookes a~Scott Farquhar v~roku 2002 v~Sydney v~Austrálii \cite{atlassian_company2024}. Ešte v~tom istom roku bola vydaná prvá verzia Jiry~(1.0), pôvodne navrhnutá ako systém na sledovanie chýb (bug tracker).
 
-Evolúcia Jiry prešla niekoľkými kľúčovými míľnikmi:
+Evolúcia Jiry prešla niekoľkými kľúčovými fázami. V~počiatočnom období (2002\,--\,2005) sa produkt postupne rozšíril z~jednoduchého bug trackera o~workflow engine a~pokročilé možnosti konfigurácie. Prelomovým sa stal rok 2009, keď Atlassian akvizíciou pluginu GreenHopper získal podporu pre metodiky Scrum a~Kanban; súbežne boli sprístupnené prvé hostované verzie Jiry a~Confluence. V~roku 2011 nasledovalo spustenie platformy Atlassian OnDemand ako plnohodnotnej SaaS služby a~v~roku 2013 uvedenie produktu Jira Service Desk pre oblasť IT service managementu.
 
-\begin{itemize}
-    \item \textbf{2002} -- Vydanie prvej verzie Jira 1.0 ako systému na sledovanie chýb
-    \item \textbf{2005} -- Rozšírenie funkcionality o~workflow engine a~customizáciu
-    \item \textbf{2009} -- Predstavenie Jira Agile (pôvodne GreenHopper) pre podporu Scrum a~Kanban
-    \item \textbf{2012} -- Spustenie Jira Cloud ako SaaS riešenia
-    \item \textbf{2015} -- Integrácia agilných funkcionalít priamo do core produktu
-    \item \textbf{2017} -- Predstavenie Jira Software, Jira Service Management a~Jira Work Management ako špecializovaných produktových línií
-    \item \textbf{2020} -- Oznámenie ukončenia podpory pre Server verziu a~prechod na Cloud a~Data Center
-    \item \textbf{2024} -- Definitívne ukončenie predaja Server licencií~\cite{atlassian_server_end2024}
-\end{itemize}
+Rok 2015 priniesol rozdelenie na tri špecializované produktové línie~-- Jira Software pre vývojové tímy, Jira Core pre netechnické tímy a~Jira Service Desk pre zákaznícku podporu. Portfólio spoločnosti sa ďalej rozrástlo v~roku 2017 akvizíciou vizuálneho Kanban nástroja Trello a~v~roku 2021 premenovaním Jira Core na Jira Work Management so zameraním na biznis tímy.
 
-[Obr. 1: Časová os vývoja nástroja Jira od roku 2002 po súčasnosť]
+Strategický obrat k~modelu cloud-first začal v~roku 2020 oznámením ukončenia podpory pre Server verziu; v~tom istom roku bola Jira Service Desk premenovaná na Jira Service Management. Prechod bol zavŕšený vo februári 2024 definitívnym ukončením podpory Server licencií a~zlúčením Jira Software a~Jira Work Management do jednotného produktu s~názvom Jira \cite{atlassian_server_end2024}.
+
+Vývoj Jiry ilustruje Obr.~\ref{fig:timeline}, ktorý zachytáva kľúčové milníky od prvého vydania v~roku 2002 až po zlúčenie produktových línií v~roku 2024.
+
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- časová os (timeline) zobrazujúca kľúčové milníky vývoja Jiry:
+% 2002 Jira 1.0, 2009 GreenHopper/Scrum+Kanban, 2011 OnDemand SaaS, 2013 Service Desk,
+% 2015 rozdelenie na Software/Core/Service Desk, 2017 akvizícia Trello, 2020 cloud-first,
+% 2024 zlúčenie do Jira. Zdroj: vlastná schéma.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Časová os vývoja nástroja Jira od roku 2002 po súčasnosť}
+\label{fig:timeline}
+\end{figure}
 
 \section{Filozofia a prístup nástroja}
 
-Jira je postavená na filozofii flexibility a~prispôsobiteľnosti. Na rozdiel od rigidných nástrojov, ktoré vnucujú používateľom konkrétnu metodiku, Jira poskytuje stavebné bloky, ktoré si organizácie môžu konfigurovať podľa vlastných procesov. Tento prístup vychádza z~poznania, že neexistuje univerzálne riešenie projektového riadenia -- každý tím má jedinečné potreby a~pracovné postupy~\cite{cohn2010}.
+Jira je postavená na filozofii flexibility a prispôsobiteľnosti. Na rozdiel od rigidných nástrojov, ktoré vnucujú používateľom konkrétnu metodiku, Jira poskytuje stavebné bloky, ktoré si organizácie môžu konfigurovať podľa vlastných procesov. Tento prístup vychádza z poznania, že neexistuje univerzálne riešenie projektového riadenia -- každý tím má jedinečné potreby a pracovné postupy \cite{cohn2010}.
 
-Základné princípy návrhu Jiry zahŕňajú:
-
-\begin{enumerate}
-    \item \textbf{Transparentnosť} -- Všetky informácie o~projektoch sú dostupné relevantným členom tímu
-    \item \textbf{Sledovateľnosť} -- Každá zmena je zaznamenaná a~auditovateľná
-    \item \textbf{Flexibilita} -- Systém sa prispôsobuje procesom, nie naopak
-    \item \textbf{Integrovateľnosť} -- Otvorená architektúra umožňuje prepojenie s~externými nástrojmi
-\end{enumerate}
+Návrh Jiry sa opiera o~štyri základné princípy. Prvým je \textit{transparentnosť}~-- všetky informácie o~projektoch sú prístupné relevantným členom tímu, čo podporuje zdieľané porozumenie a~znižuje informačnú asymetriu. S~tým úzko súvisí \textit{sledovateľnosť}: každá zmena je zaznamenaná a~auditovateľná, čo uľahčuje spätnú analýzu rozhodnutí aj plnenie regulačných požiadaviek. Tretím princípom je \textit{flexibilita}~-- systém sa prispôsobuje procesom organizácie, nie naopak, čo umožňuje adopciu bez vynútenia konkrétnej metodiky. Napokon, \textit{integrovateľnosť} zabezpečuje, že otvorená architektúra a~rozsiahle API umožňujú prepojenie Jiry s~externými nástrojmi a~službami.
 
 \section{Cieľová skupina používateľov}
 
-Jira slúži širokému spektru používateľov v~rámci softvérového vývojového procesu. Každá používateľská rola interaguje s~nástrojom odlišným spôsobom a~využíva rozdielne funkcionality.
+Jira slúži širokému spektru používateľov v rámci softvérového vývojového procesu. Každá používateľská rola interaguje s nástrojom odlišným spôsobom a využíva rozdielne funkcionality.
 
 \subsection{Vývojári softvéru}
 
-Pre vývojárov predstavuje Jira primárny zdroj informácií o~pridelených úlohách. Vývojári využívajú nástroj na:
-\begin{itemize}
-    \item sledovanie pridelených issue a~ich priorít,
-    \item dokumentáciu technických detailov a~riešení,
-    \item prepojenie commitov a~pull requestov s~úlohami,
-    \item komunikáciu s~ostatnými členmi tímu prostredníctvom komentárov,
-    \item logovanie odpracovaného času.
-\end{itemize}
+Pre vývojárov predstavuje Jira primárny zdroj informácií o~pridelených úlohách. V~každodennej praxi ju využívajú na sledovanie pridelených issue a~ich priorít, dokumentáciu technických detailov a~riešení, ako aj na prepojenie commitov a~pull requestov priamo s~konkrétnymi úlohami. Dôležitú úlohu zohráva aj kontextová komunikácia prostredníctvom komentárov pri jednotlivých úlohách a~logovanie odpracovaného času, ktoré umožňuje presnejšie plánovanie kapacity.
 
 \subsection{Projektoví manažéri a Scrum Masteri}
 
-Táto skupina využíva Jiru predovšetkým na koordináciu a~plánovanie:
-\begin{itemize}
-    \item vytváranie a~prioritizáciu backlogu,
-    \item plánovanie šprintov a~verzií,
-    \item sledovanie kapacity tímu,
-    \item generovanie reportov a~metrík,
-    \item identifikáciu a~riešenie blokujúcich faktorov.
-\end{itemize}
+Projektoví manažéri a~Scrum Masteri využívajú Jiru predovšetkým na koordináciu a~plánovanie. Kľúčovými aktivitami sú vytváranie a~prioritizácia backlogu, plánovanie šprintov a~verzií a~sledovanie kapacity tímu. Na základe automaticky generovaných reportov a~metrík dokážu identifikovať blokujúce faktory a~operatívne na ne reagovať, čím udržiavajú plynulý priebeh projektu.
 
 \subsection{Product Owneri}
 
-Product Owneri využívajú Jiru na:
-\begin{itemize}
-    \item definovanie a~prioritizáciu požiadaviek,
-    \item vytváranie user stories a~špecifikácií,
-    \item sledovanie progresu jednotlivých funkcionalít,
-    \item komunikáciu so stakeholdermi prostredníctvom zdieľaných dashboardov.
-\end{itemize}
+Pre Product Ownerov je Jira nástrojom na definovanie a~prioritizáciu požiadaviek, vytváranie user stories a~technických špecifikácií. Progres jednotlivých funkcionalít je možné priebežne sledovať a~komunikovať so stakeholdermi prostredníctvom zdieľaných dashboardov, ktoré poskytujú prehľad bez nutnosti vstupovať do detailov implementácie.
 
 \subsection{Vedenie a stakeholderi}
 
-Na úrovni manažmentu slúži Jira ako nástroj pre:
-\begin{itemize}
-    \item strategické plánovanie pomocou roadmáp,
-    \item sledovanie kľúčových metrík a~KPI,
-    \item získavanie prehľadu o~stave projektov bez potreby detailného ponorenia,
-    \item rozhodovanie na základe dát z~reportov.
-\end{itemize}
+Na úrovni manažmentu slúži Jira predovšetkým ako strategický nástroj. Umožňuje dlhodobé plánovanie pomocou roadmáp, sledovanie kľúčových metrík a~KPI a~získavanie agregovaného prehľadu o~stave projektov bez potreby detailného ponorenia do operačných detailov. Rozhodovanie sa tak môže opierať o~aktuálne dáta z~reportov namiesto subjektívnych hodnotení.
 
-[Obr. 2: Schéma interakcie rôznych používateľských rolí s~nástrojom Jira]
+Vzájomnú interakciu jednotlivých rolí s~nástrojom Jira zachytáva Obr.~\ref{fig:roles}. Z~diagramu je zrejmé, že každá rola pristupuje k~iným častiam systému a~využíva odlišné funkcionality, no všetky sa stretávajú v~spoločnom dátovom modeli projektov a~úloh.
+
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- diagram zobrazujúci interakciu rolí (vývojári, Scrum Master,
+% Product Owner, manažment) s Jirou: ktoré funkcionality využíva každá rola,
+% kde sa prekrývajú (napr. dashboardy, komentáre). Zdroj: vlastná schéma.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Schéma interakcie rôznych používateľských rolí s~nástrojom Jira}
+\label{fig:roles}
+\end{figure}
 
 \section{Produktové línie Jira}
 
-V~súčasnosti Atlassian ponúka niekoľko špecializovaných verzií Jiry, každú optimalizovanú pre konkrétne použitie:
+V súčasnosti Atlassian ponúka niekoľko špecializovaných verzií Jiry, každú optimalizovanú pre konkrétne použitie:
 
-\textbf{Jira Software} je vlajková loď produktovej línie, určená pre softvérové vývojové tímy. Obsahuje natívnu podporu pre Scrum a~Kanban, integráciu s~vývojárskymi nástrojmi a~pokročilé reportingové možnosti~\cite{atlassian_jira_software2024}.
+\textbf{Jira} (predtým Jira Software) je vlajková loď produktovej línie, určená pre softvérové vývojové tímy. Obsahuje natívnu podporu pre Scrum a Kanban, integráciu s vývojárskymi nástrojmi a pokročilé reportingové možnosti. V roku 2024 boli Jira Software a Jira Work Management zlúčené do jedného produktu s názvom Jira \cite{atlassian_jira_software2024}.
 
-\textbf{Jira Service Management} (predtým Jira Service Desk) je určená pre IT service management a~zákaznícku podporu. Implementuje ITIL framework a~poskytuje funkcionalitu pre incident management, change management a~self-service portály.
+\textbf{Jira Service Management} (predtým Jira Service Desk) je určená pre IT service management a zákaznícku podporu. Implementuje ITIL framework a poskytuje funkcionalitu pre incident management, change management a self-service portály.
 
-\textbf{Jira Work Management} (predtým Jira Core) je zjednodušená verzia pre netechnické tímy ako marketing, HR alebo právne oddelenia. Poskytuje intuitívne rozhranie bez komplexnosti typickej pre softvérový vývoj.
+Historicky existovala aj \textbf{Jira Work Management} (predtým Jira Core), zjednodušená verzia pre netechnické tímy ako marketing, HR alebo právne oddelenia. Od roku 2024 je táto funkcionalita integrovaná priamo do hlavného produktu Jira.
 
-Pre účely tohto referátu sa budeme primárne zameriavať na Jira Software, keďže táto verzia je najrelevantnejšia pre riadenie agilných softvérových projektov.
+Pre účely tohto referátu sa budeme primárne zameriavať na Jiru, keďže tento produkt je najrelevantnejší pre riadenie agilných softvérových projektov.

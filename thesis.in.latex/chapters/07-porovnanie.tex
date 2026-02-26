@@ -1,94 +1,74 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Porovnanie s~alternatívnymi nástrojmi}\label{ch:porovnanie}
+\chapter{Porovnanie s alternatívnymi nástrojmi}\label{ch:porovnanie}
 
-Trh s~nástrojmi pre projektové riadenie je vysoko konkurenčný. Táto kapitola porovnáva Jiru s~hlavnými alternatívami -- Trello a~Asana, čím poskytuje kontext pre rozhodovanie o~výbere vhodného nástroja.
+Trh s nástrojmi pre projektové riadenie je vysoko konkurenčný. Táto kapitola porovnáva Jiru s hlavnými alternatívami -- Trello a Asana, čím poskytuje kontext pre rozhodovanie o výbere vhodného nástroja.
 
-\section{Prehlušad projektových management nástrojov}
+\section{Prehľad nástrojov pre projektové riadenie}
 
-Nástroje pre projektové riadenie možno kategorizovať podľa komplexnosti a~cieľového použitia:
+Nástroje pre projektové riadenie možno kategorizovať podľa komplexnosti a~cieľového použitia do niekoľkých skupín. Na jednom konci spektra stoja jednoduché task managery (Todoist, Microsoft To~Do) a~vizuálne Kanban nástroje (Trello, Notion), vhodné predovšetkým pre jednotlivcov a~malé tímy. Strednú kategóriu tvoria všeobecné PM nástroje ako Asana, Monday.com či Wrike, zatiaľ čo softvérovo orientované riešenia~-- Jira, Linear alebo Azure DevOps~-- sa zameriavajú na podporu vývojárskych procesov. Na opačnom konci spektra sa nachádzajú enterprise riešenia ako Microsoft Project alebo ServiceNow.
 
-\begin{itemize}
-    \item \textbf{Jednoduché task managers} -- Todoist, Microsoft To Do
-    \item \textbf{Vizuálne Kanban nástroje} -- Trello, Notion
-    \item \textbf{Všeobecné PM nástroje} -- Asana, Monday.com, Wrike
-    \item \textbf{Softvérovo-orientované nástroje} -- Jira, Linear, Azure DevOps
-    \item \textbf{Enterprise riešenia} -- Microsoft Project, ServiceNow
-\end{itemize}
-
-Pre účely tohto porovnania sa zameriame na tri najpopulárnejšie nástroje v~kategórii mid-market: Jira, Trello a~Asana.
+Pre účely tohto porovnania sa zameriame na tri najpopulárnejšie nástroje v~strednom trhovom segmente: Jira, Trello a~Asana.
 
 \section{Trello}
 
 \subsection{Charakteristika}
 
-Trello je vizuálny Kanban nástroj založený na metafore kartičiek na tabuli. Je tiež produktom Atlassian (akvizícia v~roku 2017) a~je známy svojou jednoduchosťou~\cite{trello2024}:
-
-\begin{itemize}
-    \item \textbf{Filozofia} -- Jednoduchosť nad komplexitou
-    \item \textbf{Rozhranie} -- Intuitívne drag-and-drop Kanban boards
-    \item \textbf{Krivka učenia} -- Minimálna, osvojenie do hodiny
-    \item \textbf{Cieľová skupina} -- Malé tímy, osobná produktivita, netechnické projekty
-\end{itemize}
+Trello je vizuálny Kanban nástroj založený na metafore kartičiek na tabuli, od roku 2017 súčasť portfólia Atlassian \cite{trello2024}. Jeho filozofia stavia jednoduchosť nad komplexitu~-- intuitívne drag-and-drop rozhranie umožňuje osvojenie nástroja prakticky do hodiny. Trello je primárne zamerané na malé tímy, osobnú produktivitu a~netechnické projekty.
 
 \subsection{Silné stránky Trello}
 
-\begin{itemize}
-    \item \textbf{Okamžitý štart} -- Bez potreby konfigurácie
-    \item \textbf{Vizuálna príťažlivosť} -- Čisté, farebné rozhranie
-    \item \textbf{Flexibilita použitia} -- Od osobných to-do po tímové projekty
-    \item \textbf{Veľkorysý free tier} -- Neobmedzené boards a~karty
-    \item \textbf{Power-Ups} -- Modulárne rozšírenia funkcionality
-\end{itemize}
+Hlavnou prednosťou Trella je \textbf{okamžitý štart} bez potreby akejkoľvek konfigurácie~-- stačí vytvoriť board a~začať pridávať karty. Vizuálne čisté a~farebné rozhranie je \textbf{vizuálne príťažlivé} a~intuitívne aj pre netechnických používateľov. Trello sa vyznačuje \textbf{flexibilitou použitia}~-- hodí sa rovnako pre osobné to-do zoznamy ako pre tímové projekty. Významnou výhodou je \textbf{veľkorysý free tier} bez obmedzenia počtu boardov a~kariet, čo odstraňuje finančnú bariéru vstupu. Funkcionalitu je možné rozšíriť prostredníctvom modulárnych \textbf{Power-Ups}, ktoré pridávajú špecializované funkcie podľa potreby.
+
+Ukážku typického Trello boardu zobrazuje Obr.~\ref{fig:trello-ui}. Na rozdiel od Jiry je rozhranie minimalistické a~orientované na vizuálnu jednoduchosť.
+
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot Trello boardu: zoznamy (lists) s kartami (cards),
+% farebné štítky, drag-and-drop rozhranie, minimalistický dizajn. Zdroj: vlastný
+% screenshot z trello.com alebo ilustratívny obrázok z dokumentácie.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Ukážka Trello boardu s~kartami a~zoznamami}
+\label{fig:trello-ui}
+\end{figure}
 
 \subsection{Obmedzenia Trello}
 
-\begin{itemize}
-    \item Chýba natívna Scrum podpora (šprint, velocity)
-    \item Limitované reporting možnosti
-    \item Škáluje sa zle pre veľké projekty (stovky kariet)
-    \item Workflows sú primitívne v~porovnaní s~Jirou
-    \item Nedostatok hierarchie (chýbajú epiky, sub-tasks)
-\end{itemize}
+Hlavnými limitáciami Trella sú chýbajúca natívna Scrum podpora (šprint, velocity), výrazne limitované reportingové možnosti a~problematické škálovanie pre veľké projekty so stovkami kariet. Workflows sú v~porovnaní s~Jirou primitívne a~chýba hierarchia úloh (epiky, sub-tasks), čo obmedzuje možnosti štruktúrovaného riadenia komplexnejších projektov.
 
 \section{Asana}
 
 \subsection{Charakteristika}
 
-Asana je work management platforma založená spoluzakladateľom Facebooku Dustinom Moskovitzom. Pozicionuje sa medzi jednoduchosťou Trello a~komplexitou Jiry~\cite{asana2024}:
-
-\begin{itemize}
-    \item \textbf{Filozofia} -- Koordinácia práce naprieč tímami
-    \item \textbf{Rozhranie} -- Multiple views (list, board, timeline, calendar)
-    \item \textbf{Krivka učenia} -- Stredná, 1--2 týždne na zvládnutie
-    \item \textbf{Cieľová skupina} -- Cross-functional tímy, marketing, operations
-\end{itemize}
+Asana je work management platforma založená spoluzakladateľom Facebooku Dustinom Moskovitzom, ktorá sa pozicionuje medzi jednoduchosťou Trella a~komplexitou Jiry \cite{asana2024}. Jej filozofia je zameraná na koordináciu práce naprieč tímami a~rozhranie ponúka viaceré pohľady (zoznam, board, časová os, kalendár). Krivka učenia je stredná~-- osvojenie trvá zhruba jeden až dva týždne. Primárnu cieľovú skupinu tvoria cross-functional tímy, marketingové a~operačné oddelenia.
 
 \subsection{Silné stránky Asany}
 
-\begin{itemize}
-    \item \textbf{Viacero pohľadov} -- List, board, timeline, calendar v~jednom projekte
-    \item \textbf{Cross-team coordination} -- Skutočne vynikajú v portfoliomanagemente
-    \item \textbf{Goals tracking} -- Natívna podpora OKR a~strategických cieľov
-    \item \textbf{Workload management} -- Vizualizácia kapacity tímu
-    \item \textbf{Elegantné UX} -- Moderné, príjemné rozhranie
-\end{itemize}
+Asana vyniká predovšetkým v~oblasti \textbf{viacerých pohľadov}~-- list, board, timeline a~calendar view sú dostupné v~jednom projekte, čo umožňuje rôznym členom tímu pracovať s~preferovanou vizualizáciou. V~oblasti \textbf{cross-team koordinácie} Asana skutočne exceluje, najmä v~správe portfólia naprieč oddeleniami. Natívna podpora \textbf{OKR a~strategických cieľov} (Goals tracking) je funkcia, ktorú Jira v~základnom produkte neponúka. \textbf{Workload management} s~vizualizáciou kapacity tímu je ďalšou silnou stránkou, podobne ako \textbf{moderné a~elegantné UX}, ktoré prispieva k~rýchlej adopcii.
+
+Obr.~\ref{fig:asana-ui} zobrazuje typický pohľad na projekt v~Asane, ktorý demonštruje odlišný prístup k~vizualizácii práce v~porovnaní s~Jirou.
+
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- screenshot Asana project view: list view alebo timeline
+% view, s úlohami, assignees, deadline, sekciami. Zdroj: vlastný screenshot
+% z app.asana.com alebo ilustratívny obrázok z dokumentácie.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Ukážka Asana project view s~timeline vizualizáciou}
+\label{fig:asana-ui}
+\end{figure}
 
 \subsection{Obmedzenia Asany}
 
-\begin{itemize}
-    \item Slabšia podpora pre softvérový vývoj (Scrum, dev integrations)
-    \item Chýba natívna integrácia s~Git repozitármi
-    \item Custom fields limitované v~nižších tieroch
-    \item Menej marketplace rozšírení ako Jira
-    \item Reporting menej sofistikovaný pre dev metriky
-\end{itemize}
+Medzi hlavné limitácie Asany patrí slabšia podpora pre softvérový vývoj~-- chýba natívna integrácia so Scrum ceremóniami a~vývojárskymi nástrojmi. Natívna integrácia s~Git repozitármi nie je dostupná a~custom fields sú v~nižších cenových úrovniach limitované. Marketplace ekosystém je v~porovnaní s~Jirou výrazne menší a~reporting pre vývojové metriky je menej sofistikovaný.
 
 \section{Komparatívna analýza}
 
+Pre systematické porovnanie všetkých troch nástrojov sme zvolili dvanásť kritérií pokrývajúcich kľúčové aspekty od primárneho použitia a~krivky učenia, cez podporu agilných metodík a~integrácie, až po cenové modely a~enterprise funkcionality. Tieto kritériá boli vybrané s~ohľadom na potreby typického softvérového vývojového tímu zvažujúceho výber nástroja.
+
 \begin{table}[ht]
 \centering
-\caption{Podrobné porovnanie Jira, Trello a~Asana}
+\caption{Podrobné porovnanie Jira, Trello a Asana}
 \label{tab:porovnanie-nastrojov}
 \begin{tabular}{|p{3.2cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
 \hline
@@ -100,7 +80,7 @@ Asana je work management platforma založená spoluzakladateľom Facebooku Dusti
 \hline
 \textbf{Scrum podpora} & Natívna, komplexná & Žiadna natívna & Limitovaná \\
 \hline
-\textbf{Kanban podpora} & Natívna s~WIP limitmi & Základná & Dobrá \\
+\textbf{Kanban podpora} & Natívna s WIP limitmi & Základná & Dobrá \\
 \hline
 \textbf{Workflows} & Pokročilé, customizovateľné & Jednoduché & Stredne pokročilé \\
 \hline
@@ -110,76 +90,47 @@ Asana je work management platforma založená spoluzakladateľom Facebooku Dusti
 \hline
 \textbf{Hierarchia úloh} & Epic > Story > Sub-task & Flat (karty) & Project > Task > Subtask \\
 \hline
-\textbf{Free tier} & 10 users & Unlimited users & 15 users \\
+\textbf{Free tier} & 10 users & Unlimited users & 10 users (Personal) [TODO: overiť v~zdroji -- aktuálny Asana free tier limit] \\
 \hline
 \textbf{Enterprise features} & Komplexné & Limitované & Dobré \\
 \hline
 \textbf{API} & REST, rozsiahle & REST, základné & REST, dobré \\
 \hline
-\textbf{Marketplace} & 3000+ apps & 200+ Power-Ups & 200+ apps \\
+\textbf{Marketplace} & 5700+ apps & 200+ Power-Ups & 200+ apps \\
 \hline
 \end{tabular}
 \end{table}
 
+Z~Tabuľky~\ref{tab:porovnanie-nastrojov} vyplýva niekoľko kľúčových záverov. Jira jednoznačne dominuje v~oblasti softvérového vývoja~-- natívna Scrum podpora, hlboká Git integrácia a~pokročilé workflows nemajú v~porovnávaných nástrojoch ekvivalent. Trello naopak vyniká v~jednoduchosti a~prístupnosti~-- plochá krivka učenia a~neobmedzený free tier z~neho robia ideálnu voľbu pre rýchly štart a~jednoduché projekty.
+
+Asana sa umiestňuje medzi oboma extrémami, pričom jej unikátnou silnou stránkou je cross-team koordinácia a~podpora viacerých pohľadov na dáta. Pre softvérové tímy je však limitujúca absencia natívnej Git integrácie a~Scrum podpory. Pre netechnické tímy a~tímy kombinujúce rôzne oddelenia môže byť Asana optimálnou voľbou, keďže jej work management orientácia lepšie vyhovuje cross-functional procesom.
+
+Z~pohľadu ekosystému je rozdiel medzi Jirou a~ostatnými nástrojmi markantný~-- 5700+ marketplace aplikácií oproti ~200 u~Trella a~Asany znamená, že Jira pokrýva výrazne širšie spektrum špecializovaných potrieb prostredníctvom tretích strán.
+
 \section{Rozhodovací framework}
 
-Na základe porovnania možno formulovať odporúčania pre výber nástroja:
+Na základe porovnania možno formulovať odporúčania pre výber nástroja. Správna voľba závisí od kombinácie viacerých faktorov vrátane veľkosti tímu, praktizovanej metodiky, technických požiadaviek a~rozpočtu.
 
-\subsection{Zvoľte Jiru ak:}
+\subsection{Kedy zvoliť Jiru}
 
-\begin{itemize}
-    \item Váš tím praktizuje Scrum alebo Kanban pre softvérový vývoj
-    \item Potrebujete integráciu s~vývojárskymi nástrojmi (Git, CI/CD)
-    \item Vyžadujete komplexné workflows a~automatizácie
-    \item Potrebujete pokročilú analytiku a~metriky (velocity, burndown)
-    \item Máte stredný až veľký tím (10+ vývojárov)
-    \item Compliance a~auditovateľnosť sú prioritou
-\end{itemize}
+Jira je optimálnou voľbou predovšetkým pre tímy, ktoré praktizujú Scrum alebo Kanban v~kontexte softvérového vývoja a~potrebujú hlbokú integráciu s~vývojárskymi nástrojmi (Git, CI/CD). Nástroj vynikne aj v~prostrediach vyžadujúcich komplexné workflows, pokročilú analytiku (velocity, burndown) a~automatizácie. Typickým profilom vhodného zákazníka je stredný až veľký tím (10 a~viac vývojárov), pre ktorý sú compliance a~auditovateľnosť prioritou.
 
-\subsection{Zvoľte Trello ak:}
+\subsection{Kedy zvoliť Trello}
 
-\begin{itemize}
-    \item Máte malý tím alebo potrebujete osobnú produktivitu
-    \item Preferujete jednoduchosť a~okamžitý štart bez konfigurácie
-    \item Vaše projekty nevyžadujú Scrum ceremónie
-    \item Rozpočet je limitovaný (generous free tier)
-    \item Tím je netechnický alebo cross-functional
-    \item Vizuálna Kanban reprezentácia je postačujúca
-\end{itemize}
+Trello je vhodné pre malé tímy alebo jednotlivcov, ktorí oceňujú jednoduchosť a~možnosť okamžitého štartu bez zdĺhavej konfigurácie. Hodí sa najmä pre projekty, ktoré nevyžadujú formálne Scrum ceremónie a~kde postačuje vizuálna Kanban reprezentácia. Výhodou je veľkorysý bezplatný plán, čo z~Trella robí atraktívnu voľbu aj pre rozpočtovo limitované či netechnické tímy.
 
-\subsection{Zvoľte Asanu ak:}
+\subsection{Kedy zvoliť Asanu}
 
-\begin{itemize}
-    \item Potrebujete koordinovať prácu naprieč rôznymi oddeleniami
-    \item Vyžadujete viacero pohľadov (list, timeline, calendar)
-    \item Trackujete strategické ciele (OKR)
-    \item Váš tím je zmiešaný (technický aj netechnický)
-    \item Potrebujete workload management a~capacity planning
-    \item Hľadáte balance medzi jednoduchosťou a~funkcionalitou
-\end{itemize}
+Asana predstavuje vhodný kompromis medzi jednoduchosťou a~funkcionalitou, najmä ak organizácia potrebuje koordinovať prácu naprieč rôznymi oddeleniami. Silnou stránkou je podpora viacerých pohľadov (zoznam, časová os, kalendár), sledovanie strategických cieľov (OKR) a~workload management s~capacity planningom. Asana je obzvlášť vhodná pre zmiešané tímy, v~ktorých spolupracujú technickí aj netechnickí členovia.
 
 \section{Hybridné prístupy}
 
-Niektoré organizácie úspešne kombinujú nástroje:
-
-\begin{itemize}
-    \item \textbf{Jira + Trello} -- Jira pre development, Trello pre marketing/operations (natívna integrácia v~rámci Atlassian)
-    \item \textbf{Jira + Confluence} -- Jira pre tracking, Confluence pre dokumentáciu
-    \item \textbf{Zákaznícky tier} -- Trello/Asana pre klientskú komunikáciu, Jira pre interný development
-\end{itemize}
+Niektoré organizácie úspešne kombinujú viacero nástrojov, čím využívajú silné stránky každého z~nich pre odlišné časti organizácie. Častým príkladom je tandem Jira a~Trello, kde Jira slúži vývojovým tímom a~Trello marketingu či operáciám~-- natívna integrácia v~rámci ekosystému Atlassian toto prepojenie uľahčuje. Ďalším osvedčeným modelom je kombinácia Jiry s~Confluence, kde prvý nástroj zabezpečuje sledovanie úloh a~druhý slúži ako dokumentačná platforma. V~prostrediach so zákazníckym stykom sa tiež vyskytuje vrstvený prístup: Trello alebo Asana pre externú komunikáciu s~klientmi a~Jira pre interný vývoj.
 
 \section{Záverečné zhodnotenie}
 
-Výber nástroja závisí od konkrétneho kontextu. Jira zostáva neprekonaná pre profesionálny softvérový vývoj s~agilnými metodikami. Jej komplexnosť je oprávnená pre tímy, ktoré potrebujú hlbokú integráciu s~vývojovým procesom a~pokročilú analytiku.
+Výber nástroja závisí od konkrétneho kontextu. Jira zostáva neprekonaná pre profesionálny softvérový vývoj s agilnými metodikami. Jej komplexnosť je oprávnená pre tímy, ktoré potrebujú hlbokú integráciu s vývojovým procesom a pokročilú analytiku.
 
-Pre jednoduchšie use cases alebo netechnické tímy môžu byť Trello alebo Asana vhodnejšou voľbou s~nižšou bariérou vstupu. Rozhodnutie by malo byť založené na:
+Pre jednoduchšie use cases alebo netechnické tímy môžu byť Trello alebo Asana vhodnejšou voľbou s nižšou bariérou vstupu. Rozhodnutie by malo zohľadňovať predovšetkým veľkosť a~zloženie tímu, praktizovanú metodiku (Scrum, Kanban, Waterfall alebo hybridný prístup), potrebu integrácie s~vývojovými nástrojmi, dostupný rozpočet vrátane času na onboarding a~dlhodobé ciele organizácie z~hľadiska škálovateľnosti.
 
-\begin{enumerate}
-    \item Veľkosti a~zložení tímu
-    \item Praktizovanej metodike (Scrum, Kanban, Waterfall, hybrid)
-    \item Potrebe integrácie s~vývojovými nástrojmi
-    \item Rozpočte a~časových možnostiach na onboarding
-    \item Dlhodobých cieľoch a~škálovateľnosti
-\end{enumerate}
-
-Pre softvérové vývojové tímy praktizujúce agilné metodiky zostáva Jira de facto štandardom, čo potvrdzuje jej dominantný trhový podiel v~tomto segmente~\cite{stateofagile2023}.
+Pre softvérové vývojové tímy praktizujúce agilné metodiky zostáva Jira de facto štandardom, čo potvrdzuje jej dominantný trhový podiel v tomto segmente \cite{stateofagile2023}.

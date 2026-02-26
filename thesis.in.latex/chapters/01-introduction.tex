@@ -2,25 +2,19 @@
 
 \chapter{Úvod}\label{ch:introduction}
 
-V~súčasnom dynamickom prostredí softvérového inžinierstva sa projektové riadenie stalo kritickým faktorom úspechu pre organizácie všetkých veľkostí. S~rastúcou komplexnosťou softvérových systémov a~skracovaním vývojových cyklov vznikla potreba sofistikovaných nástrojov, ktoré dokážu efektívne koordinovať prácu vývojových tímov, sledovať progres projektov a~zabezpečiť transparentnú komunikáciu medzi všetkými zainteresovanými stranami~\cite{sutherland2014}.
+V súčasnom dynamickom prostredí softvérového inžinierstva sa projektové riadenie stalo kritickým faktorom úspechu pre organizácie všetkých veľkostí. S rastúcou komplexnosťou softvérových systémov a skracovaním vývojových cyklov vznikla potreba sofistikovaných nástrojov, ktoré dokážu efektívne koordinovať prácu vývojových tímov, sledovať progres projektov a zabezpečiť transparentnú komunikáciu medzi všetkými zainteresovanými stranami \cite{sutherland2014}.
 
-Agilné metodiky, predovšetkým Scrum a~Kanban, sa v~posledných dvoch dekádach etablovali ako dominantné prístupy k~vývoju softvéru. Podľa prieskumu State of Agile Report využíva agilné metodiky viac ako 94\% organizácií pôsobiacich v~oblasti softvérového vývoja~\cite{stateofagile2023}. Tento masívny prechod k~agilným prístupom vyvolal potrebu špecializovaných nástrojov, ktoré dokážu podporiť iteratívny a~inkrementálny charakter agilného vývoja.
+Agilné metodiky, predovšetkým Scrum a Kanban, sa v posledných dvoch dekádach etablovali ako dominantné prístupy k vývoju softvéru. Podľa prieskumu State of Agile Report využíva agilné metodiky viac ako 94\% respondentov prieskumu pôsobiacich v oblasti softvérového vývoja \cite{stateofagile2023}. Je však potrebné poznamenať, že tento prieskum má samoselektívnu vzorku -- respondentmi sú prevažne organizácie, ktoré sa už o agilné metodiky aktívne zaujímajú. Tento masívny prechod k agilným prístupom vyvolal potrebu špecializovaných nástrojov, ktoré dokážu podporiť iteratívny a inkrementálny charakter agilného vývoja.
 
-Medzi najrozšírenejšie nástroje pre riadenie agilných projektov patrí Jira od spoločnosti Atlassian. Od svojho uvedenia na trh v~roku 2002 sa Jira vyvinula z~jednoduchého systému na sledovanie chýb na komplexnú platformu pre projektové riadenie, ktorú využíva viac ako 180~000 organizácií po celom svete~\cite{atlassian2024}. Jej flexibilita, rozsiahle možnosti prispôsobenia a~robustný ekosystém integrácií z~nej urobili štandard v~odvetví informačných technológií.
+Medzi najrozšírenejšie nástroje pre riadenie agilných projektov patrí Jira od spoločnosti Atlassian. Od svojho uvedenia na trh v roku 2002 sa Jira vyvinula z jednoduchého systému na sledovanie chýb na komplexnú platformu pre projektové riadenie, ktorú podľa údajov spoločnosti využíva viac ako 300 000 organizácií po celom svete \cite{atlassian2024}. Jej flexibilita, rozsiahle možnosti prispôsobenia a robustný ekosystém integrácií z nej urobili štandard v odvetví informačných technológií.
 
 \section{Motivácia a ciele práce}
 
-Hlavným cieľom tohto referátu je poskytnúť komplexnú analýzu nástroja Jira z~pohľadu jeho využitia v~riadení agilných projektov. Práca sa zameriava na:
+Hlavným cieľom tohto referátu je poskytnúť komplexnú analýzu nástroja Jira z pohľadu jeho využitia v riadení agilných projektov. Práca sa zameriava na detailnú charakteristiku nástroja a~jeho technickej architektúry, analýzu kľúčových funkcionalít a~ich praktického využitia v~projektovom cykle, kritické zhodnotenie výhod a~limitácií nástroja a~porovnanie s~konkurenčnými riešeniami na trhu.
 
-\begin{itemize}
-    \item detailnú charakteristiku nástroja a~jeho technickej architektúry,
-    \item analýzu kľúčových funkcionalít a~ich praktického využitia v~projektovom cykle,
-    \item kritické zhodnotenie výhod a~limitácií nástroja,
-    \item porovnanie s~konkurenčnými riešeniami na trhu.
-\end{itemize}
+Referát je primárne určený pre projektových manažérov, Scrum Masterov, Product Ownerov a vývojárov, ktorí zvažujú implementáciu alebo optimalizáciu využívania Jiry vo svojich organizáciách. Sekundárnou cieľovou skupinou sú študenti informatiky a softvérového inžinierstva, ktorí sa pripravujú na vstup do profesionálnej praxe.
 
-Referát je primárne určený pre projektových manažérov, Scrum Masterov, Product Ownerov a~vývojárov, ktorí zvažujú implementáciu alebo optimalizáciu využívania Jiry vo svojich organizáciách. Sekundárnou cieľovou skupinou sú študenti informatiky a~softvérového inžinierstva, ktorí sa pripravujú na vstup do profesionálnej praxe.
 
 \section{Štruktúra práce}
 
-Referát je štruktúrovaný do siedmich hlavných kapitol. Po úvodnej kapitole nasleduje druhá kapitola venovaná všeobecnej charakteristike nástroja Jira, jeho histórii a~cieľovej skupine používateľov. Tretia kapitola sa zaoberá technickými aspektmi a~architektúrou systému. Štvrtá kapitola predstavuje jadro práce a~detailne analyzuje využitie Jiry v~jednotlivých fázach projektového cyklu. Piata kapitola sumarizuje hlavné prínosy nástroja, zatiaľ čo šiesta kapitola poskytuje kritické zhodnotenie výhod a~nevýhod. Siedma kapitola obsahuje porovnávaciu analýzu s~konkurenčnými nástrojmi. Prácu uzatvára záverečná kapitola so zhrnutím kľúčových zistení.
+Referát je štruktúrovaný do siedmich hlavných kapitol. Po úvodnej kapitole nasleduje druhá kapitola venovaná všeobecnej charakteristike nástroja Jira, jeho histórii a cieľovej skupine používateľov. Tretia kapitola sa zaoberá technickými aspektmi a architektúrou systému. Štvrtá kapitola predstavuje jadro práce a detailne analyzuje využitie Jiry v jednotlivých fázach projektového cyklu. Piata kapitola sumarizuje hlavné prínosy nástroja, zatiaľ čo šiesta kapitola poskytuje kritické zhodnotenie výhod a nevýhod. Siedma kapitola obsahuje porovnávaciu analýzu s konkurenčnými nástrojmi. Prácu uzatvára záverečná kapitola so zhrnutím kľúčových zistení.

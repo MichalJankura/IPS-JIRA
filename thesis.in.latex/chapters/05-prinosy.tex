@@ -2,141 +2,89 @@
 
 \chapter{Prínosy nástroja Jira pre organizácie}\label{ch:prinosy}
 
-Implementácia Jiry v~organizácii prináša množstvo benefitov, ktoré sa prejavujú na rôznych úrovniach -- od individuálnej produktivity až po strategické riadenie portfólia projektov. Táto kapitola analyzuje konkrétne prínosy dokumentované v~praxi.
+Implementácia Jiry v organizácii prináša množstvo benefitov, ktoré sa prejavujú na rôznych úrovniach -- od individuálnej produktivity až po strategické riadenie portfólia projektov. Táto kapitola analyzuje konkrétne prínosy dokumentované v praxi.
 
 \section{Zvýšenie transparentnosti}
 
-Transparentnosť je jedným z~pilierov agilného prístupu a~Jira ju podporuje na viacerých úrovniach:
+Transparentnosť je jedným z pilierov agilného prístupu a Jira ju podporuje na viacerých úrovniach. Centralizácia informácií o~projektoch do jedného nástroja eliminuje situácie, kedy rôzne časti organizácie pracujú s~rozdielnymi alebo zastaranými informáciami.
 
 \subsection{Viditeľnosť práce}
 
-Centralizácia všetkých pracovných položiek v~Jire eliminuje informačné silá:
-\begin{itemize}
-    \item Každý člen tímu vidí stav všetkých úloh v~reálnom čase
-    \item Manažment má okamžitý prehľad bez potreby status meetingov
-    \item Stakeholderi môžu sledovať progres cez zdieľané dashboardy
-    \item Eliminuje sa \enquote{tribal knowledge} -- informácie nie sú len v~hlavách jednotlivcov
-\end{itemize}
+Centralizácia všetkých pracovných položiek v~Jire eliminuje informačné silá. Každý člen tímu vidí stav všetkých úloh v~reálnom čase, manažment získava okamžitý prehľad bez potreby status meetingov a~stakeholderi môžu sledovať progres cez zdieľané dashboardy. Týmto spôsobom sa eliminuje tzv. \enquote{tribal knowledge}~-- informácie už nie sú len v~hlavách jednotlivcov, ale sú zdokumentované a~dostupné celému tímu.
 
-Štúdia spoločnosti Atlassian ukázala, že tímy používajúce Jiru strávia o~25\% menej času na status update meetingoch, pretože informácie sú dostupné samoobslužne~\cite{atlassian_roi2023}.
+Podľa interného prieskumu spoločnosti Atlassian, tímy používajúce Jiru strávia o 25\% menej času na status update meetingoch, pretože informácie sú dostupné samoobslužne \cite{atlassian_roi2023}. Je potrebné poznamenať, že tieto údaje pochádzajú od samotného výrobcu a neboli nezávisle overené.
 
 \subsection{Auditovateľnosť}
 
-Plná história zmien pre každé issue umožňuje:
-\begin{itemize}
-    \item sledovanie kto, kedy a~čo zmenil,
-    \item pochopenie kontextu rozhodnutí z~minulosti,
-    \item compliance s~regulačnými požiadavkami (SOX, HIPAA, GDPR),
-    \item forenzná analýza v~prípade problémov.
-\end{itemize}
+Plná história zmien pre každé issue umožňuje sledovať, kto, kedy a~čo zmenil, čo pomáha pochopiť kontext rozhodnutí z~minulosti. Z~hľadiska regulatírnych požiadaviek (SOX, HIPAA, GDPR) je táto auditovateľnosť kľúčová, pretože zabezpečuje plnú compliance a~umožňuje forenznú analýzu v~prípade problémov.
 
 \section{Zlepšenie komunikácie a spolupráce}
 
+Efektívna komunikácia je predpokladom úspešnej tímovej spolupráce, no v~prostredí softvérového vývoja býva často fragmentovaná medzi e-maily, chatové aplikácie a~osobné rozhovory. Jira tento problém rieši centralizáciou projektovej komunikácie priamo k~pracovným položkám, čím zabezpečuje, že diskusie zostávajú v~kontexte konkrétnych úloh.
+
 \subsection{Centralizovaná komunikácia}
 
-Jira slúži ako single source of truth pre projektovú komunikáciu:
-\begin{itemize}
-    \item Komentáre priamo pri issues zachovávajú kontext
-    \item @mentions notifikujú relevantné osoby
-    \item Watchers dostávajú automatické update
-    \item Integrácia so Slack/Teams prenáša notifikácie do chat nástrojov
-\end{itemize}
+Jira slúži ako single source of truth (jediný zdroj pravdy) pre projektovú komunikáciu. Komentáre priamo pri jednotlivých issues zachovávajú kontext diskusie, pričom @mentions notifikujú relevantné osoby a~watchers dostávajú automatické upozornenia o~zmenách. Integrácia so Slack či Microsoft Teams navyše prenáša notifikácie priamo do chatových nástrojov, čo ďalej znižuje fragmentáciu komunikácie.
 
 \subsection{Zníženie e-mailového preťaženia}
 
-Presun projektovej komunikácie do Jiry dramaticky znižuje objem e-mailov:
-\begin{itemize}
-    \item Diskusie sú viazané na konkrétne úlohy, nie roztrúsené v~mailboxoch
-    \item Noví členovia tímu majú prístup k~historickej komunikácii
-    \item Vyhľadávanie v~projektovom archíve je efektívnejšie ako v~e-mailoch
-\end{itemize}
+Presun projektovej komunikácie do Jiry výrazne znižuje objem e-mailov. Diskusie sú viazané na konkrétne úlohy, nie roztrúsené v~mailboxoch, čo zároveň znamená, že noví členovia tímu majú okamžitý prístup k~historickej komunikácii. Vyhľadávanie v~projektovom archíve je tak výrazne efektívnejšie než prehliadanie e-mailových vlákien.
 
 \section{Podpora agilných metodík}
 
-Jira je navrhnutá s~natívnou podporou agilných praktík:
+Jira je navrhnutá s natívnou podporou agilných praktík, čo z~nej robí jeden z~mála nástrojov, kde Scrum aj Kanban nie sú doplnkom, ale integrálnou súčasťou architektúry produktu.
 
 \subsection{Scrum support}
 
-Pre Scrum tímy Jira poskytuje:
-\begin{itemize}
-    \item Sprint planning s~velocity-based kapacitným plánovaním
-    \item Daily standups podporené vizuálnou board prezentáciou
-    \item Sprint review s~automatickými sprint reports
-    \item Retrospektívy s~prístupom k~metrikám šprintu
-\end{itemize}
+Pre Scrum tímy Jira poskytuje komplexnú podporu celého šprintového cyklu~-- od sprint planningu s~velocity-based kapacitným plánovaním, cez daily standupy podporené vizuálnou board prezentáciou, až po sprint review s~automatickými sprint reports. Prístup k~metrikám šprintu zároveň obohacuje retrospektívy o~objektívne dáta.
 
 \subsection{Kanban support}
 
-Kanban tímy benefitujú z:
-\begin{itemize}
-    \item WIP limitov vynucujúcich Kanban princípy
-    \item Cumulative flow diagramov pre flow analýzu
-    \item Cycle time trackingu pre prediktabilitu
-    \item Kontinuálneho delivery bez sprint boundaries
-\end{itemize}
+Kanban tímy benefitujú z~WIP limitov, ktoré vynucujú Kanban princípy, cumulative flow diagramov pre analýzu toku práce a~cycle time trackingu pre zvyšovanie prediktability. Kontinuálny delivery bez šprintových hraníc umožňuje plynulý tok úloh od zadania až po nasadenie.
 
 \subsection{Hybridné prístupy}
 
-Jira podporuje aj tímy kombinujúce rôzne prístupy:
-\begin{itemize}
-    \item Scrumban -- kombinácia Scrum šprintov s~Kanban WIP limitmi
-    \item SAFe (Scaled Agile Framework) -- enterprise-scale agilita~\cite{safe2024}
-    \item LeSS (Large-Scale Scrum) -- škálovanie Scrumu
-\end{itemize}
+Jira podporuje aj tímy kombinujúce rôzne prístupy. Príkladom je Scrumban~-- kombinácia Scrum šprintov s~Kanban WIP limitmi, ktorá spája výhody oboch metodík. Pre enterprise-scale agilitu je k~dispozícii podpora pre SAFe (Scaled Agile Framework) \cite{safe2024} a~LeSS (Large-Scale Scrum).
 
 \section{Dátami riadené rozhodovanie}
 
+Jedným z~najvýznamnejších prínosov Jiry je schopnosť transformovať subjektívne vnímanie stavu projektu na merateľné dáta. Automaticky generované metriky nahrádzajú odhady faktami a~umožňujú tak informovanejšie rozhodovanie na všetkých úrovniach organizácie.
+
 \subsection{Objektívne metriky}
 
-Jira automaticky generuje metriky, ktoré nahrádzajú subjektívne odhady:
-\begin{itemize}
-    \item \textbf{Velocity} -- skutočná kapacita tímu, nie optimistické odhady
-    \item \textbf{Cycle time} -- reálny čas potrebný na dokončenie úloh
-    \item \textbf{Defect rate} -- kvalita deliverables v~čase
-    \item \textbf{Scope creep} -- miera zmien počas šprintov
-\end{itemize}
+Jira automaticky generuje metriky, ktoré nahrádzajú subjektívne odhady objektívnymi dátami. \textit{Velocity} (rýchlosť tímu) vyjadruje skutočnú kapacitu tímu namiesto optimistických odhadov, \textit{cycle time} (doba cyklu) ukazuje reálny čas potrebný na dokončenie úloh a~\textit{defect rate} (miera chybovosti) vyjadruje kvalitu deliverables v~čase. Metrika \textit{scope creep} naviac umožňuje kvantifikovať mieru zmien počas šprintov, čo je kľúčové pre identifikáciu procesných problémov.
 
 \subsection{Prediktabilita}
 
-Historické dáta umožňujú presnejšie plánovanie:
-\begin{itemize}
-    \item Velocity trend predpovedá kapacitu budúcich šprintov
-    \item Monte Carlo simulácie (s~marketplace apps) pre pravdepodobnostné odhady
-    \item Release forecasting na základe skutočného tempa
-\end{itemize}
+Historické dáta umožňujú presnejšie plánovanie. Velocity trend predpovedá kapacitu budúcich šprintov, Monte Carlo simulácie (dostupné prostredníctvom marketplace aplikácií) ponúkajú pravdepodobnostné odhady a~release forecasting umožňuje prognozovanie termínov na základe skutočného tempa práce tímu.
 
 \section{Škálovateľnosť a flexibilita}
 
-\subsection{Rast s~organizáciou}
+Pre organizácie, ktoré rastú alebo prechádzajú evolúciou procesov, je dôležité, aby nástroj dokázal rásť spolu s~nimi. Jira bola od počiatku navrhnutá s~ohľadom na škálovateľnosť aj konfigurovateľnosť, čo umožňuje jej nasadenie v~rôznorodých kontextoch.
 
-Jira rastie spolu s~organizáciou:
-\begin{itemize}
-    \item Od malého tímu (5 ľudí) po enterprise (tisíce používateľov)
-    \item Od jednoduchého bug trackingu po komplexné portfolio management
-    \item Postupné pridávanie funkcionalít bez nutnosti migrácie
-\end{itemize}
+\subsection{Rast s organizáciou}
+
+Jira rastie spolu s~organizáciou~-- od malého tímu s~piatimi ľuďmi až po enterprise nasadenie s~tisíckami používateľov. Funkčne sa dokáže vyvinúť od jednoduchého bug trackingu po komplexné portfolio management, pričom postupné pridávanie funkcionalít nevyžaduje migráciu na iný systém.
 
 \subsection{Konfigurovateľnosť}
 
-Organizácie môžu prispôsobiť Jiru svojim procesom:
-\begin{itemize}
-    \item Custom issue types pre špecifické potreby
-    \item Vlastné workflows reflektujúce reálne procesy
-    \item Custom fields pre doménovo-špecifické atribúty
-    \item Permission schémy pre komplexné organizačné štruktúry
-\end{itemize}
+Organizácie môžu prispôsobiť Jiru svojim procesom viacerými spôsobmi: vytváraním vlastných typov issues pre špecifické potreby, definíciou workflows reflektujúcich reálne procesy, custom fields pre doménovo špecifické atribúty a~permission schémami pre komplexné organizačné štruktúry. Táto miera konfigurácie umožňuje, aby nástroj verne odrážal zabehané pracovné postupy.
 
 \section{Return on Investment (ROI)}
 
-Štúdie dokumentujú merateľný ROI z~implementácie Jiry:
+Interné štúdie spoločnosti Atlassian, spracované v~spolupráci s~Forrester Consulting, dokumentujú merateľný ROI z~implementácie Jiry (tieto údaje pochádzajú od výrobcu a~neboli nezávisle overené) \cite{atlassian_roi2023}. Podľa nich došlo k~zníženiu času na status reporting o~priemerne 4~hodiny týždenne na manažéra a~k~rýchlejšiemu onboardingu~-- noví členovia tímu boli produktivne zapojení o~30\,\% skôr. Vizualizácia zmien údajne viedla k~disciplinovanejšiemu plánovaniu (zníženie scope creep) a~presnosť odhadov sa zvýšila o~40\,\% po šiestich mesiacoch používania.
 
-\begin{itemize}
-    \item \textbf{Zníženie času na status reporting} -- priemerne 4 hodiny týždenne na manažéra~\cite{atlassian_roi2023}
-    \item \textbf{Rýchlejšie onboarding} -- noví členovia tímu sú produktívni o~30\% skôr
-    \item \textbf{Zníženie scope creep} -- vizualizácia zmien vedie k~disciplinovanejšiemu plánovaniu
-    \item \textbf{Zlepšená prediktabilita} -- presnosť odhadov sa zvyšuje o~40\% po 6 mesiacoch používania
-\end{itemize}
+Typický priebeh návratnosti investície po implementácii Jiry ilustruje Obr.~\ref{fig:roi}. V~úvodnom období je návratnosť záporná kvôli nákladom na licencie, konfiguráciu a~onboarding, no po niekoľkých mesiacoch začnú prevažovať úspory z~efektívnejších procesov.
 
-[Obr. 8: Graf zobrazujúci typický ROI timeline po implementácii Jiry]
+\begin{figure}[ht]
+\centering
+% TODO: vložiť obrázok -- graf zobrazujúci typický ROI timeline: os X = mesiace
+% po implementácii (0-12), os Y = kumulatívny ROI. Počiatočná investícia (záporná),
+% break-even bod okolo 3-4 mesiaca, rastúci pozitívny ROI. Zdroj: vlastná schéma
+% na základe údajov Atlassian/Forrester.
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\caption{Graf zobrazujúci typický ROI timeline po implementácii Jiry}
+\label{fig:roi}
+\end{figure}
 
-Celkovo možno konštatovať, že Jira prináša hodnotu prostredníctvom kombinácie zvýšenej efektivity, lepšej spolupráce a~dátami podložených rozhodnutí. Konkrétne prínosy sa líšia podľa kontextu organizácie, ale dokumentované výhody konzistentne potvrdzujú pozitívny dopad na agilné tímy.
+Celkovo možno konštatovať, že Jira prináša hodnotu prostredníctvom kombinácie zvýšenej efektivity, lepšej spolupráce a dátami podložených rozhodnutí. Konkrétne prínosy sa líšia podľa kontextu organizácie, ale dokumentované výhody konzistentne potvrdzujú pozitívny dopad na agilné tímy.
