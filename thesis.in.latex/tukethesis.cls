@@ -471,7 +471,7 @@
     \pagestyle{empty}  % no page numbers until TOC
     \frontpage
     \titlepage
-    \abstractpage
+    %\abstractpage
 
     % thesis detail specification
     %\@thesisspec
