@@ -114,12 +114,52 @@ Rozhodovací strom na Obr.~\ref{fig:decision-tree} vizualizuje kľúčové otáz
 
 \begin{figure}[ht]
 \centering
-% TODO: vložiť obrázok -- rozhodovací strom (flowchart): kľúčové otázky:
-% "Softvérový vývoj?" -> áno/nie; "Scrum/Kanban?" -> áno/nie;
-% "Tím > 10 ľudí?" -> áno/nie; "Potreba customizácie?" -> áno/nie.
-% Koncové uzly: Jira, Trello, Asana, iné. Zdroj: vlastná schéma.
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
-\caption{Rozhodovací strom pre výber nástroja na projektové riadenie}
+\begin{tikzpicture}[
+    decision/.style={draw, diamond, aspect=2.2, inner sep=1pt,
+        fill=blue!8, font=\small, align=center, text width=2.4cm},
+    result/.style={draw, rounded corners=4pt, fill=green!12,
+        font=\small\bfseries, inner sep=5pt, align=center, minimum width=1.8cm},
+    arr/.style={->, thick, black!60},
+    lbl/.style={font=\footnotesize, fill=white, inner sep=1pt},
+]
+
+% Level 1: Software development?
+\node[decision] (q1) at (0,0) {Softv\'{e}rov\'{y} v\'{y}voj?};
+
+% No -> Trello / Asana
+\node[result] (r1) at (-4.5,0) {Trello / Asana};
+\draw[arr] (q1.west) -- node[lbl, above] {Nie} (r1.east);
+
+% Yes -> Level 2: Scrum/Kanban?
+\node[decision] (q2) at (0,-2.5) {Scrum /\\Kanban?};
+\draw[arr] (q1.south) -- node[lbl, right] {\'{A}no} (q2.north);
+
+% No -> Asana
+\node[result] (r2) at (-4.5,-2.5) {Asana};
+\draw[arr] (q2.west) -- node[lbl, above] {Nie} (r2.east);
+
+% Yes -> Level 3: Team > 10?
+\node[decision] (q3) at (0,-5) {T\'{i}m $>$ 10\\ľud\'{i}?};
+\draw[arr] (q2.south) -- node[lbl, right] {\'{A}no} (q3.north);
+
+% No -> Trello
+\node[result] (r3) at (-4.5,-5) {Trello};
+\draw[arr] (q3.west) -- node[lbl, above] {Nie} (r3.east);
+
+% Yes -> Level 4: Customization?
+\node[decision] (q4) at (0,-7.5) {Potreba\\customiz\'{a}cie?};
+\draw[arr] (q3.south) -- node[lbl, right] {\'{A}no} (q4.north);
+
+% No -> other tool
+\node[result, fill=gray!12] (r4) at (-4.5,-7.5) {In\'{y} n\'{a}stroj};
+\draw[arr] (q4.west) -- node[lbl, above] {Nie} (r4.east);
+
+% Yes -> Jira
+\node[result, fill=blue!15] (r5) at (0,-9.5) {\textbf{Jira}};
+\draw[arr] (q4.south) -- node[lbl, right] {\'{A}no} (r5.north);
+
+\end{tikzpicture}
+\caption{Rozhodovac\'{i} strom pre v\'{y}ber n\'{a}stroja na projektov\'{e} riadenie (zdroj: vlastn\'{a} sch\'{e}ma)}
 \label{fig:decision-tree}
 \end{figure}
 

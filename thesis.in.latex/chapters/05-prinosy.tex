@@ -78,12 +78,56 @@ Typický priebeh návratnosti investície po implementácii Jiry ilustruje Obr.~
 
 \begin{figure}[ht]
 \centering
-% TODO: vložiť obrázok -- graf zobrazujúci typický ROI timeline: os X = mesiace
-% po implementácii (0-12), os Y = kumulatívny ROI. Počiatočná investícia (záporná),
-% break-even bod okolo 3-4 mesiaca, rastúci pozitívny ROI. Zdroj: vlastná schéma
-% na základe údajov Atlassian/Forrester.
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
-\caption{Graf zobrazujúci typický ROI timeline po implementácii Jiry}
+\begin{tikzpicture}[
+    font=\small,
+]
+% Axes
+\draw[->, thick] (0,-2.5) -- (0,4.2) node[above] {Kumulat\'{i}vny ROI};
+\draw[->, thick] (-0.3,0) -- (10.5,0) node[right] {Mesiace};
+
+% Zero line label
+\node[anchor=east, font=\footnotesize] at (-0.1,0) {0};
+
+% Y-axis labels
+\node[anchor=east, font=\footnotesize] at (-0.1,-2) {$-$};
+\node[anchor=east, font=\footnotesize] at (-0.1,3.5) {$+$};
+
+% X-axis tick labels
+\foreach \x in {1,2,...,12} {
+    \draw (\x*0.8, 0.08) -- (\x*0.8, -0.08);
+    \node[anchor=north, font=\footnotesize] at (\x*0.8, -0.15) {\x};
+}
+
+% Fill areas: negative (cost) and positive (gain)
+\fill[red!8]
+    (0.8,-2) -- (0.8,-1.8) -- (1.6,-1.2) -- (2.4,-0.5) -- (2.72,0) -- (0.8, 0) -- cycle;
+\fill[red!8]
+    (0.8,0) -- (0.8,-2) -- (0,0-0) -- cycle;
+
+\fill[green!10]
+    (2.72,0) -- (3.2,0.4) -- (4.0,1.0) -- (4.8,1.5) -- (5.6,2.0)
+    -- (6.4,2.4) -- (7.2,2.8) -- (8.0,3.1) -- (8.8,3.3) -- (9.6,3.5)
+    -- (9.6,0) -- cycle;
+
+% ROI curve
+\draw[thick, blue!70!black]
+    (0.8,-2) -- (1.6,-1.2) -- (2.4,-0.5) -- (2.72,0) -- (3.2,0.4)
+    -- (4.0,1.0) -- (4.8,1.5) -- (5.6,2.0) -- (6.4,2.4)
+    -- (7.2,2.8) -- (8.0,3.1) -- (8.8,3.3) -- (9.6,3.5);
+
+% Break-even point
+\fill[black] (2.72,0) circle (3pt);
+\node[anchor=south west, font=\footnotesize\bfseries] at (2.82,0.15) {Break-even};
+
+% Annotations
+\draw[<-, black!60] (1.2,-1.6) -- (2.2,-2.2)
+    node[anchor=west, font=\footnotesize, text width=2.8cm] {Licencie, konfigur\'{a}cia, onboarding};
+
+\draw[<-, black!60] (7.2,2.8) -- (8.2,3.8)
+    node[anchor=west, font=\footnotesize, text width=2.5cm] {\'{U}spory z~efekt\'{i}vnejších procesov};
+
+\end{tikzpicture}
+\caption{Graf zobrazuj\'{u}ci typick\'{y} ROI timeline po implement\'{a}cii Jiry (zdroj: vlastn\'{a} sch\'{e}ma)}
 \label{fig:roi}
 \end{figure}
 

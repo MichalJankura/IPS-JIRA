@@ -18,12 +18,56 @@ Vývoj Jiry ilustruje Obr.~\ref{fig:timeline}, ktorý zachytáva kľúčové mil
 
 \begin{figure}[ht]
 \centering
-% TODO: vložiť obrázok -- časová os (timeline) zobrazujúca kľúčové milníky vývoja Jiry:
-% 2002 Jira 1.0, 2009 GreenHopper/Scrum+Kanban, 2011 OnDemand SaaS, 2013 Service Desk,
-% 2015 rozdelenie na Software/Core/Service Desk, 2017 akvizícia Trello, 2020 cloud-first,
-% 2024 zlúčenie do Jira. Zdroj: vlastná schéma.
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
-\caption{Časová os vývoja nástroja Jira od roku 2002 po súčasnosť}
+\begin{tikzpicture}[
+    milestone/.style={fill=black!8, rounded corners=2pt, text width=5.2cm,
+        font=\small, inner sep=4pt, align=left},
+    yearbox/.style={fill=black!75, text=white, rounded corners=2pt,
+        font=\small\bfseries, inner sep=3pt, minimum width=1cm},
+]
+% Vertical line
+\draw[thick, black!40] (0,0) -- (0,-11.2);
+
+% 2002
+\fill[black!75] (0,0) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,0) {2002};
+\node[milestone, anchor=west] at (0.4,0) {Jira 1.0 -- pôvodne bug tracker};
+
+% 2009
+\fill[black!75] (0,-1.6) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,-1.6) {2009};
+\node[milestone, anchor=west] at (0.4,-1.6) {Akvizícia GreenHopper; podpora Scrum a~Kanban};
+
+% 2011
+\fill[black!75] (0,-3.2) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,-3.2) {2011};
+\node[milestone, anchor=west] at (0.4,-3.2) {Atlassian OnDemand -- plnohodnotná SaaS služba};
+
+% 2013
+\fill[black!75] (0,-4.8) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,-4.8) {2013};
+\node[milestone, anchor=west] at (0.4,-4.8) {Uvedenie Jira Service Desk};
+
+% 2015
+\fill[black!75] (0,-6.4) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,-6.4) {2015};
+\node[milestone, anchor=west] at (0.4,-6.4) {Rozdelenie na Jira Software, Core a~Service Desk};
+
+% 2017
+\fill[black!75] (0,-8.0) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,-8.0) {2017};
+\node[milestone, anchor=west] at (0.4,-8.0) {Akvizícia vizuálneho nástroja Trello};
+
+% 2020
+\fill[black!75] (0,-9.6) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,-9.6) {2020};
+\node[milestone, anchor=west] at (0.4,-9.6) {Stratégia cloud-first; ukončenie Server verzií};
+
+% 2024
+\fill[black!75] (0,-11.2) circle (3pt);
+\node[yearbox, anchor=east] at (-0.4,-11.2) {2024};
+\node[milestone, anchor=west] at (0.4,-11.2) {Zlúčenie produktov do jednotného názvu Jira};
+\end{tikzpicture}
+\caption{Časová os vývoja nástroja Jira od roku 2002 po súčasnosť (zdroj: vlastná schéma)}
 \label{fig:timeline}
 \end{figure}
 
@@ -57,11 +101,68 @@ Vzájomnú interakciu jednotlivých rolí s~nástrojom Jira zachytáva Obr.~\ref
 
 \begin{figure}[ht]
 \centering
-% TODO: vložiť obrázok -- diagram zobrazujúci interakciu rolí (vývojári, Scrum Master,
-% Product Owner, manažment) s Jirou: ktoré funkcionality využíva každá rola,
-% kde sa prekrývajú (napr. dashboardy, komentáre). Zdroj: vlastná schéma.
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
-\caption{Schéma interakcie rôznych používateľských rolí s~nástrojom Jira}
+\begin{tikzpicture}[
+    rolebox/.style={draw, rounded corners=4pt, text width=4.8cm,
+        font=\small, inner sep=5pt, align=left, fill=#1},
+    roletitle/.style={font=\small\bfseries},
+    jiracore/.style={draw, rounded corners=6pt, fill=black!10,
+        inner sep=6pt, font=\small, align=center, text width=3.2cm},
+    arr/.style={->, thick, black!50, shorten >=2pt, shorten <=2pt},
+]
+
+% Central Jira node
+\node[jiracore] (jira) at (0,0) {
+    {\bfseries Jira}\\[3pt]
+    Projekty a~úlohy\\
+    Komentáre\\
+    Dashboardy\\
+    Reporty
+};
+
+% Developers (top-left)
+\node[rolebox=blue!8, anchor=south east] (dev) at (-1.2,1.8) {
+    \textbf{Vývojári}\\[2pt]
+    -- Sledovanie issues\\
+    -- Commity a~pull requesty\\
+    -- Technická dokumentácia\\
+    -- Logovanie času
+};
+
+% Scrum Master / PM (top-right)
+\node[rolebox=green!8, anchor=south west] (sm) at (1.2,1.8) {
+    \textbf{Scrum Master / PM}\\[2pt]
+    -- Plánovanie šprintov\\
+    -- Prioritizácia backlogu\\
+    -- Kapacita tímu\\
+    -- Identifikácia blokerov
+};
+
+% Product Owner (bottom-left)
+\node[rolebox=orange!10, anchor=north east] (po) at (-1.2,-1.8) {
+    \textbf{Product Owner}\\[2pt]
+    -- Definovanie požiadaviek\\
+    -- User stories\\
+    -- Sledovanie progresu\\
+    -- Komunikácia so stakeholdermi
+};
+
+% Management (bottom-right)
+\node[rolebox=red!6, anchor=north west] (mgmt) at (1.2,-1.8) {
+    \textbf{Vedenie / Stakeholderi}\\[2pt]
+    -- Roadmapy\\
+    -- KPI a~metriky\\
+    -- Prehľad projektov\\
+    -- Dátami podložené rozhodnutia
+};
+
+% Arrows from roles to Jira center
+\draw[arr] (dev.south east) -- (jira.north west);
+\draw[arr] (sm.south west) -- (jira.north east);
+\draw[arr] (po.north east) -- (jira.south west);
+\draw[arr] (mgmt.north west) -- (jira.south east);
+
+\end{tikzpicture}
+\caption{Schéma interakcie rôznych používateľských rolí s~nástrojom Jira (zdroj: vlastná schéma)}
 \label{fig:roles}
 \end{figure}
 

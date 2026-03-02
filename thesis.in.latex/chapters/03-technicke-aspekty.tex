@@ -22,11 +22,60 @@ Architektúru oboch deployment modelov porovnáva Obr.~\ref{fig:deployment}, z~k
 
 \begin{figure}[ht]
 \centering
-% TODO: vložiť obrázok -- diagram porovnávajúci Cloud (multi-tenant, Atlassian spravuje)
-% a Data Center (cluster, zákazník spravuje) architektúru. Zobraziť load balancer,
-% aplikačné uzly, databázu, zdieľané úložisko. Zdroj: vlastná schéma.
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
-\caption{Porovnanie architektúry Cloud a~Data Center deploymentu}
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=3pt, minimum width=2.6cm, minimum height=0.7cm,
+        font=\small, align=center, inner sep=4pt},
+    cloud/.style={box, fill=blue!8},
+    dc/.style={box, fill=green!8},
+    lbl/.style={font=\footnotesize\bfseries, fill=white, inner sep=2pt},
+    arr/.style={->, thick, black!60},
+]
+
+% --- CLOUD (left side) ---
+\node[font=\small\bfseries] at (-3.5,4.4) {Jira Cloud};
+
+% Boundary
+\draw[dashed, rounded corners=6pt, blue!30, thick]
+    (-5.6,3.9) rectangle (-1.4,-3.2);
+\node[lbl, blue!70] at (-3.5,3.9) {Spravuje Atlassian};
+
+\node[cloud] (cu) at (-3.5,3.1) {Pou\v{z}\'{i}vatelia};
+\node[cloud] (cg) at (-3.5,1.8) {Atlassian Gateway};
+\node[cloud] (ca) at (-3.5,0.5) {Multi-tenant App};
+\node[cloud] (cd) at (-3.5,-0.8) {Zdie\v{l}an\'{a} DB};
+\node[cloud] (cs) at (-3.5,-2.1) {Blob Storage};
+
+\draw[arr] (cu) -- (cg);
+\draw[arr] (cg) -- (ca);
+\draw[arr] (ca) -- (cd);
+\draw[arr] (ca) -- (cs);
+
+% --- DATA CENTER (right side) ---
+\node[font=\small\bfseries] at (3.5,4.4) {Jira Data Center};
+
+% Boundary
+\draw[dashed, rounded corners=6pt, green!40!black!30, thick]
+    (1.4,3.9) rectangle (5.6,-3.2);
+\node[lbl, green!50!black] at (3.5,3.9) {Spravuje z\'{a}kazn\'{i}k};
+
+\node[dc] (du) at (3.5,3.1) {Pou\v{z}\'{i}vatelia};
+\node[dc] (dlb) at (3.5,1.8) {Load Balancer};
+\node[dc] (da1) at (2.3,0.5) {Uzol 1};
+\node[dc] (da2) at (4.7,0.5) {Uzol 2};
+\node[dc] (dd) at (2.3,-0.8) {Datab\'{a}za};
+\node[dc] (ds) at (4.7,-0.8) {\v{U}lo\v{z}isko};
+\node[dc, minimum width=2.6cm] (dfs) at (3.5,-2.1) {Zdie\v{l}an\'{y} FS};
+
+\draw[arr] (du) -- (dlb);
+\draw[arr] (dlb) -- (da1);
+\draw[arr] (dlb) -- (da2);
+\draw[arr] (da1) -- (dd);
+\draw[arr] (da2) -- (ds);
+\draw[arr] (da1) -- (dfs);
+\draw[arr] (da2) -- (dfs);
+
+\end{tikzpicture}
+\caption{Porovnanie architekt\'{u}ry Cloud a~Data Center deploymentu (zdroj: vlastn\'{a} sch\'{e}ma)}
 \label{fig:deployment}
 \end{figure}
 
