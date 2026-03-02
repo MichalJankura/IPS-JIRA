@@ -120,11 +120,37 @@ Príklad takéhoto workflow pre sledovanie chýb (bugov) zachytáva Obr.~\ref{fi
 
 \begin{figure}[ht]
 \centering
-% TODO: vložiť obrázok -- stavový diagram pre Bug workflow: stavy Open -> In Progress
-% -> In Review -> Closed, s možnosťou Reopen z Closed do Open, s podmienkami
-% a post-functions na prechodoch. Zdroj: vlastný screenshot z Jira workflow editora.
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
-\caption{Príklad workflow pre Bug tracking s~jednotlivými stavmi a~prechodmi}
+\begin{tikzpicture}[
+    state/.style={draw, rounded corners=5pt, minimum width=2.6cm, minimum height=1cm,
+        font=\small\bfseries, align=center, fill=blue!7},
+    arr/.style={-{Stealth[length=5pt]}, thick, black!65},
+    lbl/.style={font=\footnotesize, fill=white, inner sep=2pt},
+]
+
+% States in 2x2 grid
+\node[state]               (open)   at (0,0)    {Open};
+\node[state]               (inprog) at (5,0)    {In Progress};
+\node[state]               (review) at (5,-3)   {In Review};
+\node[state, fill=green!10](closed) at (0,-3)   {Closed};
+
+% Initial marker
+\fill[black] (-1.8,0) circle (3.5pt);
+\draw[arr] (-1.8,0) -- (open);
+
+% Forward flow (clockwise)
+\draw[arr] (open)   -- node[lbl, above] {Začať riešiť}         (inprog);
+\draw[arr] (inprog) -- node[lbl, right] {Odovzdať na review}   (review);
+\draw[arr] (review) -- node[lbl, below] {Uzavrieť}             (closed);
+
+% Reopen: Closed -> Open (left side, upward)
+\draw[arr] (closed) -- node[lbl, left] {Znovuotvoriť}          (open);
+
+% Return: In Review -> In Progress (right side, upward, curved)
+\draw[arr] (review) to[bend right=30]
+    node[lbl, right=3pt] {Vrátiť na opravu} (inprog);
+
+\end{tikzpicture}
+\caption{Príklad workflow pre Bug tracking s~jednotlivými stavmi a~prechodmi (zdroj: vlastná schéma)}
 \label{fig:workflow}
 \end{figure}
 
@@ -167,10 +193,7 @@ Podľa interných štatistík spoločnosti Atlassian, priemerná organizácia po
 
 \begin{figure}[ht]
 \centering
-% TODO: vložiť obrázok -- screenshot Atlassian Marketplace: vyhľadávanie doplnkov,
-% kategórie (reporting, CI/CD, testing, time tracking), hodnotenia, cena.
-% Zdroj: vlastný screenshot z marketplace.atlassian.com.
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[TODO: vložiť obrázok]\vspace{2cm}}}
+\includegraphics[width=\textwidth]{figures/marketplace.png}
 \caption{Rozhranie Atlassian Marketplace s~kategóriami rozšírení}
 \label{fig:marketplace}
 \end{figure}
